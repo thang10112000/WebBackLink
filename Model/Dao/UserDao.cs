@@ -8,10 +8,10 @@ namespace Model.Dao
 {
     public class UserDao
     {
-        ClickShopDbConText db = null;
+        ClickShopDbContext db = null;
         public UserDao()
         {
-            db = new ClickShopDbConText();
+            db = new ClickShopDbContext();
         }
         public long Insert(User entity)
         {
@@ -19,32 +19,20 @@ namespace Model.Dao
             db.SaveChanges();
             return entity.ID;
         }
-
-        //lấy user dựa vào user id
         public User GetById(string userName)
         {
             return db.Users.SingleOrDefault(x => x.UserName == userName);
         }
-        public int Login(string userName, string passWord)
+        public bool Login(string userName, string passWord)
         {
-            var res = db.Users.SingleOrDefault(x => x.UserName == userName);
-            if (res == null)
+            var res = db.Users.Count(x => x.UserName == userName && x.Password == passWord);
+            if (res > 0)
             {
-                return 0;
+                return true;
             }
             else
             {
-                if (res.Status == false)
-                {
-                    return -1;
-                }
-                else
-                {
-                    if (res.Password == passWord)
-                        return 1;
-                    else
-                        return -2;
-                }
+                return false;
             }
         }
     }

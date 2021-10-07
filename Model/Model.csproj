@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\Category.cs" />
-    <Compile Include="EF\ClickShopDbConText.cs" />
+    <Compile Include="EF\ClickShopDbContext.cs" />
     <Compile Include="EF\Contact.cs" />
     <Compile Include="EF\Content.cs" />
     <Compile Include="EF\Feedback.cs" />

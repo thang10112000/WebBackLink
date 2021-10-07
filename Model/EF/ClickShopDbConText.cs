@@ -5,10 +5,10 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ClickShopDbConText : DbContext
+    public partial class ClickShopDbContext : DbContext
     {
-        public ClickShopDbConText()
-            : base("name=ClickShopDbConText")
+        public ClickShopDbContext()
+            : base("name=ClickShopDbContext")
         {
         }
 

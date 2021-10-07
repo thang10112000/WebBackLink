@@ -92,6 +92,7 @@
     <Content Include="Assets\admin\fonts\iconic\css\material-design-iconic-font.css" />
     <Content Include="Assets\admin\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="Assets\admin\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Assets\admin\images\bg-01.jpg" />
     <Content Include="Assets\admin\images\icons\favicon.ico" />
     <Content Include="Assets\admin\js\main.js" />
     <Content Include="Assets\admin\vendor\animate\animate.css" />
@@ -126,11 +127,26 @@
     <Content Include="Assets\admin\vendor\select2\select2.min.js" />
     <Content Include="database\ClickShop.sql" />
     <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +217,7 @@
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,8 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
