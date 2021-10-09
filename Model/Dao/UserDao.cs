@@ -23,16 +23,26 @@ namespace Model.Dao
         {
             return db.Users.SingleOrDefault(x => x.UserName == userName);
         }
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            var res = db.Users.Count(x => x.UserName == userName && x.Password == passWord);
-            if (res > 0)
+            var res = db.Users.SingleOrDefault(x => x.UserName == userName);
+            if (res == null)
             {
-                return true;
+                return 0;
             }
             else
             {
-                return false;
+                if (res.Status == false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (res.Password == passWord)
+                        return 1;
+                    else
+                        return -2;
+                }
             }
         }
     }

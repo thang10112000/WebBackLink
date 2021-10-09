@@ -40,7 +40,7 @@
 
                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                {
-                  //@Html.ValidationSummary(false, "", "error");
+                 
                    
                   <form class="login100-form validate-form">
                     <span class="login100-form-title p-b-49">
@@ -55,7 +55,9 @@
                     </div>
                       
                     <div class="wrap-input100 validate-input" data-validate="Vui lòng nhập mật khẩu">
+
                         <span class="label-input100">Mật khẩu</span>
+                        
                         @Html.PasswordFor(model => model.Password, new { @class = "input100", placeholder = "Nhập mật khẩu" })
                         
                         <span class="focus-input100" data-symbol="&#xf190;"></span>
@@ -70,7 +72,9 @@
                             Quên mật khẩu?
                         </a>
                     </div>
-
+                       
+                      @Html.ValidationSummary(false, "",  new { @class = "text-danger" })
+                     
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>

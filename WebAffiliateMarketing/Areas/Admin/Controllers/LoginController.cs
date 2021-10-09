@@ -23,7 +23,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             {
                 var dao = new UserDao();
                 var result = dao.Login(model.UserName, model.Password);
-                if (result)
+                if (result ==1)
                 {
                     var user = dao.GetById(model.UserName);
                     var userSession = new UserLogin();
@@ -33,9 +33,17 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     Session.Add(CommonConstants.USE_SESSION, userSession);
                     return RedirectToAction("Index", "Home");
                 }
-                else
+                else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Sai tài khoản hoặc mật khẩu");
+                    ModelState.AddModelError("", "Tài khoản không tồn tại.");
+                }
+                else if (result == -1)
+                {
+                    ModelState.AddModelError("", "Tài khoản đang bị khóa.");
+                }
+                else if (result == -2)
+                {
+                    ModelState.AddModelError("", "Sai mật khẩu.");
                 }
             }
             return View("Index");

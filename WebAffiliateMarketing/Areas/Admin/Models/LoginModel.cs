@@ -8,10 +8,10 @@ namespace WebAffiliateMarketing.Areas.Admin.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Nhập tài khoản")]
+      //  [Required(ErrorMessage = "Nhập tài khoản")]
         public string UserName { set; get; }
 
-        [Required(ErrorMessage = "Nhập Mật khẩu")]
+       // [Required(ErrorMessage = "Nhập Mật khẩu")]
         public string Password { set; get; }
 
         public bool RememberMe { set; get; }
