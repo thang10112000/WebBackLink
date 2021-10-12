@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebAffiliateMarketing.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController :   BaseController // đổi sang BaseControler để kiểm tra tk đã login chưa
     {
         //
         // GET: /Admin/Home/
