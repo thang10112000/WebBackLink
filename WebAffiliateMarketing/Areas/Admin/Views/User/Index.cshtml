@@ -3,5 +3,87 @@
     ViewBag.Title = "Quản lý người dùng";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+@* khai báo model để lấy ds listPage   *@
+@model PagedList.IPagedList<Model.EF.User>
+@using PagedList.Mvc;
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<h2 style="margin-left:8%">Danh sách admin</h2>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/Assets/admin/css/style_table.css">
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Danh sách admin</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Họ và tên</th>
+                                    <th>Tài khoản</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr class="alert" role="alert">
+
+                                    <td scope="row">@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Password</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Email</td>
+                                    <td>
+                                        <a href="User/Edit/@item.ID">Sửa</a>
+                                        <a href="User/Delete/@item.ID">Xóa</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                        @*Hiển thị thông tin trang*@
+                        @Html.PagedListPager(Model,page=>Url.Action("Index" , new {page}))
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Assets/admin/js/jquery.min.js"></script>
+    <script src="~/Assets/admin/js/popper.js"></script>
+    <script src="~/Assets/admin/js/bootstrap.min.js"></script>
+    <script src="~/Assets/admin/js/main_table.js"></script>
+
+</body>
+</html>
+
+

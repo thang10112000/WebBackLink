@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
+using PagedList.Mvc;
+using PagedList;
 namespace Model.Dao
 {
     public class UserDao
@@ -18,6 +20,10 @@ namespace Model.Dao
             db.Users.Add(entity);
             db.SaveChanges();
             return entity.ID;
+        }
+        public IEnumerable<User> ListAllPaging (int page , int pageSize) // phương thức lấy ra các bảng ghi 
+        {
+            return db.Users.OrderByDescending(x=>x.CreateDate).ToPagedList(page, pageSize);
         }
         public User GetById(string userName)
         {

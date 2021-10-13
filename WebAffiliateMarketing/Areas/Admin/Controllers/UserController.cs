@@ -5,15 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using PagedList;
+using PagedList.Mvc;
 namespace WebAffiliateMarketing.Areas.Admin.Controllers
 {
     public class UserController : Controller
     {
         // Thêm mới bảng ghi vào dtb
-        public ActionResult Index()
+        public ActionResult Index(int page =1, int pageSize = 10)
         {
-            return View();
+            var dao = new UserDao();
+            var model = dao.ListAllPaging(page, pageSize);
+            return View(model);
         }
         [HttpGet] // phần tải trang giao diện
         public ActionResult Create()
