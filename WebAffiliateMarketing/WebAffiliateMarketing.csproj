@@ -927,6 +927,7 @@
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
