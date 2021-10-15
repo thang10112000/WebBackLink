@@ -10,13 +10,15 @@ using PagedList.Mvc;
 using WebAffiliateMarketing.Common;
 namespace WebAffiliateMarketing.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         // Thêm mới bảng ghi vào dtb
-        public ActionResult Index(int page =1, int pageSize = 10)
+        public ActionResult Index(string searchString, int page =1, int pageSize = 10)
         {
             var dao = new UserDao();
-            var model = dao.ListAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searchString, page, pageSize);
+            ViewBag.SearchString = searchString;
+
             return View(model);
         }
         [HttpGet] // phần tải trang giao diện

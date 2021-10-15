@@ -28,6 +28,16 @@
                     <h2 class="heading-section">Danh sách admin</h2>
                 </div>
             </div>
+
+            @using (Html.BeginForm("Index", "User", FormMethod.Get))
+            {
+                <div class="ps-search--header" action="do_action" method="post">
+                   
+                    <input class="form-control" value="@ViewBag.SearchString" name="searchString" type="text" placeholder="Tìm kiếm…">
+                    <button><i class="ps-icon-search"></i></button>
+                       
+                </div>
+            }
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-wrap">
@@ -46,35 +56,35 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr class="alert" role="alert">
+                                    <tr class="alert" role="alert">
 
-                                    <td scope="row">@item.ID</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.UserName</td>
-                                    <td>@item.Password</td>
-                                    <td>@item.Phone</td>
-                                    <td>@item.Email</td>
-                                  
-                                    <td id="row_@item.ID" >
-                                        <a href="/Admin/User/Edit/@item.ID">Sửa</a>
-                                        |
-                                        @Ajax.ActionLink("Xóa" ,"Delete",new { @id = item.ID },new AjaxOptions
-                                   {
-                                       Confirm = "Bạn có muốn xóa tài khoản này không",
-                                       OnComplete = "$('#row_"+item.ID+"').remove()",
-                                       HttpMethod = "Delete"
-                                   })
+                                        <td scope="row">@item.ID</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.UserName</td>
+                                        <td>@item.Password</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Email</td>
 
-                                    </td>
-                                   
-                                </tr>
+                                        <td id="row_@item.ID">
+                                            <a href="/Admin/User/Edit/@item.ID">Sửa</a>
+                                            |
+                                            @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                       {
+                                           Confirm = "Bạn có muốn xóa tài khoản này không",
+                                           OnComplete = "$('#row_" + item.ID + "').remove()",
+                                           HttpMethod = "Delete"
+                                       })
+
+                                        </td>
+
+                                    </tr>
                                 }
 
 
                             </tbody>
                         </table>
                         @*Hiển thị thông tin trang*@
-                        @Html.PagedListPager(Model,page=>Url.Action("Index" , new {page}))
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page ,@searchString = @ViewBag.SearchString}))
 
                     </div>
                 </div>
