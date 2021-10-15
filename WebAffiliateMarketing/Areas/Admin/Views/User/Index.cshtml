@@ -54,10 +54,16 @@
                                     <td>@item.Password</td>
                                     <td>@item.Phone</td>
                                     <td>@item.Email</td>
-                                    <td>
+                                  
+                                    <td id="row_@item.ID" >
                                         <a href="/Admin/User/Edit/@item.ID">Sửa</a>
                                         |
-                                        <a href="/Admin/User/Delete/@item.ID">Xóa</a>
+                                        @Ajax.ActionLink("Xóa" ,"Delete",new { @id = item.ID },new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xóa tài khoản này không",
+                                       OnComplete = "$('#row_"+item.ID+"').remove()",
+                                       HttpMethod = "Delete"
+                                   })
 
                                     </td>
                                    

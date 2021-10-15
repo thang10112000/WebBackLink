@@ -23,7 +23,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             {
                 var dao = new UserDao();
 
-                var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
+                var result = dao.Login(model.UserName, model.Password);
                 if (result ==1)
                 {
                     var user = dao.GetById(model.UserName);

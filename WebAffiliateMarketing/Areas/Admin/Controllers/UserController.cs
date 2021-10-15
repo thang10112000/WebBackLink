@@ -74,5 +74,11 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             }
             return View("Index");
         }
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            new UserDao().Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
