@@ -13,7 +13,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         //kiểm tra user đã login hay chưa nếu chưa sẽ bị đẩy ra trang đăng nhập , gán trong homecontroller
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var session = (UserLogin)Session[CommonConstants.USE_SESSION];
+            var session = (UserLogin)Session[CommonConstants.USER_SESSION];
             if (session == null)
             {
                 filterContext.Result = new RedirectToRouteResult(new

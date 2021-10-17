@@ -31,7 +31,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
 
-                    Session.Add(CommonConstants.USE_SESSION, userSession);
+                    Session.Add(CommonConstants.USER_SESSION, userSession);
                     return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
