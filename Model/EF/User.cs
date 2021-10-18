@@ -12,7 +12,7 @@
         public long ID { get; set; }
 
         [StringLength(50)]
-        [Display(Name="Tài khoản")]
+        [Display(Name = "Tài khoản")]
         public string UserName { get; set; }
 
         [StringLength(32)]
@@ -50,4 +50,5 @@
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
     }
+
 }
