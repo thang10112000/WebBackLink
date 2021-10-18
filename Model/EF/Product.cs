@@ -57,7 +57,7 @@ namespace Model.EF
         [StringLength(250)]
         public string MetaDescriptions { get; set; }
 
-        public int? Status { get; set; }
+        public int Status { get; set; }
 
         public DateTime? TopHot { get; set; }
 

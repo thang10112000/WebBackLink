@@ -16,17 +16,14 @@ namespace Model.EF
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
-        public virtual DbSet<Footer> Footers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MenuType> MenuTypes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<About> Abouts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -65,10 +62,6 @@ namespace Model.EF
             modelBuilder.Entity<Feedback>()
                 .Property(e => e.Status)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Footer>()
-                .Property(e => e.ID)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Code)
@@ -151,22 +144,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.MetaDescriptions)
-                .IsFixedLength();
-
-            modelBuilder.Entity<About>()
-                .Property(e => e.MetaTitle)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<About>()
-                .Property(e => e.CreatedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<About>()
-                .Property(e => e.ModifiedBy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<About>()
                 .Property(e => e.MetaDescriptions)
                 .IsFixedLength();
         }

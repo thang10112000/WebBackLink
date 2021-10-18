@@ -28,6 +28,7 @@ namespace Model.EF
 
         public DateTime? CreateDate { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string Status { get; set; }
     }

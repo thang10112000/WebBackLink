@@ -79,19 +79,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\UserDao.cs" />
-    <Compile Include="EF\About.cs" />
     <Compile Include="EF\Category.cs" />
     <Compile Include="EF\ClickShopDbContext.cs" />
     <Compile Include="EF\Contact.cs" />
     <Compile Include="EF\Content.cs" />
     <Compile Include="EF\Feedback.cs" />
-    <Compile Include="EF\Footer.cs" />
     <Compile Include="EF\Menu.cs" />
     <Compile Include="EF\MenuType.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\ProductCategory.cs" />
     <Compile Include="EF\Slide.cs" />
-    <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\SystemConfig.cs" />
     <Compile Include="EF\Tag.cs" />
     <Compile Include="EF\User.cs" />
