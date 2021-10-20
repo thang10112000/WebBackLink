@@ -23,6 +23,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Content model)
         {
             if (ModelState.IsValid)

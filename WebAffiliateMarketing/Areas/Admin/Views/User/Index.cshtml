@@ -28,7 +28,9 @@
                     <h2 class="heading-section">Danh sách admin</h2>
                 </div>
             </div>
-
+            @section jsFooter{
+                        <script src="/Assets/admin/js/controller/userController.js"></script>
+                }
             @using (Html.BeginForm("Index", "User", FormMethod.Get))
             {
                 <div class="ps-search--header" action="do_action" method="post">
@@ -50,6 +52,7 @@
                                     <th>Mật khẩu</th>
                                     <th>Số điện thoại</th>
                                     <th>Email</th>
+                                    <th>Trạng thái</th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -64,6 +67,7 @@
                                         <td>@item.Password</td>
                                         <td>@item.Phone</td>
                                         <td>@item.Email</td>
+                                        <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status?"Kích hoạt" : "Khóa")</a></td>
 
                                         <td id="row_@item.ID">
                                             <a href="/Admin/User/Edit/@item.ID">Sửa</a>
