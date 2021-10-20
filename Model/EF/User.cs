@@ -19,6 +19,9 @@
         [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
+        [StringLength(20)]
+        public string GroupID { get; set; }
+
         [StringLength(50)]
         [Display(Name = "Họ và tên")]
         public string Name { get; set; }
@@ -28,6 +31,7 @@
         public string Address { get; set; }
 
         [StringLength(50)]
+
         public string Email { get; set; }
 
         [StringLength(50)]
@@ -46,9 +50,7 @@
 
         [StringLength(250)]
         public string MetaDescriptions { get; set; }
-
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
     }
-
 }

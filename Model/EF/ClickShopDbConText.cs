@@ -8,7 +8,7 @@ namespace Model.EF
     public partial class ClickShopDbContext : DbContext
     {
         public ClickShopDbContext()
-            : base("name=ClickShopDbContext1")
+            : base("name=ClickShopDbContext")
         {
         }
 
@@ -22,7 +22,6 @@ namespace Model.EF
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -140,6 +139,10 @@ namespace Model.EF
 
             modelBuilder.Entity<User>()
                 .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.GroupID)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
