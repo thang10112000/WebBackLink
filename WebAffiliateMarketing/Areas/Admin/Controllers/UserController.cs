@@ -44,11 +44,12 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Đã thêm tài khoản", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm User thành công.");
+                    ModelState.AddModelError("", "Thêm tài khoản không thành công .");
                 }
             }
             return View("Index");
@@ -67,11 +68,12 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 var res = dao.Update(user);
                 if (res)
                 {
+                    SetAlert("Đã thay đổi thông tin tài khoản", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thay đổi thông tin thành công.");
+                    ModelState.AddModelError("", "Thay đổi thông tin không thành công.");
                 }
             }
             return View("Index");

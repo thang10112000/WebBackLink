@@ -29,16 +29,17 @@
                 </div>
             </div>
             @section jsFooter{
-                        <script src="/Assets/admin/js/controller/userController.js"></script>
-                }
+                <script src="/Assets/admin/js/controller/userController.js"></script>
+            }
             @using (Html.BeginForm("Index", "User", FormMethod.Get))
             {
                 <div class="ps-search--header" action="do_action" method="post">
-                   
+
                     <input class="form-control" value="@ViewBag.SearchString" name="searchString" type="text" placeholder="Tìm kiếm…">
                     <button><i class="ps-icon-search"></i></button>
-                       
+
                 </div>
+                <a type="button" , class="btn btn-primary" href="/Admin/User/Create">Thên tài khoản</a>
             }
             <div class="row">
                 <div class="col-md-12">
@@ -88,7 +89,7 @@
                             </tbody>
                         </table>
                         @*Hiển thị thông tin trang*@
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page ,@searchString = @ViewBag.SearchString}))
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
 
                     </div>
                 </div>

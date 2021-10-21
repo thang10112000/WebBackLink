@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                         <div class="header__actions">
-                            @*<a href="/Admin/Login">Đăng xuất</a>*@
+                         
 
                             @Html.ActionLink("Đăng xuất", "Logout", "Login");
                         </div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-       
+
         @RenderPage("_Navigation.cshtml")
 
     </header>
@@ -70,6 +70,13 @@
         </div>
     </div>
     <div>
+
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div id="AlertBox" class="alert alert-success @TempData["AlertType"] hide">
+                @TempData["AlertMessage"]
+            </div>
+        }
         @RenderBody()
     </div>
     <!-- JS Library-->
@@ -100,6 +107,8 @@
     <script src="~/Assets/admin/js/plugins2/ckfinder/ckfinder.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <!-- Custom scripts-->
+   
+    <script src="/Assets/admin/js/AlertBox.js"></script>
     <script type="text/javascript" src="~/Assets/admin/js/main.js"></script>
     @RenderSection("jsFooter", required: false)
 </body>
