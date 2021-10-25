@@ -1,0 +1,18 @@
+﻿
+@model List<Model.EF.Menu>
+<div class="navigation__column center">
+    <ul class="main-menu menu">
+        @foreach (var item in Model)
+        {
+            <li class="menu-item menu-item-has-children dropdown">
+                <a href="@item.Link" target="@item.Target">@item.Text</a>
+
+            </li>
+        }
+
+       
+     
+   
+      
+    </ul>
+</div>
