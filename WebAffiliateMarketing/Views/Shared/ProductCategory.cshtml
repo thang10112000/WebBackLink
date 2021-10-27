@@ -1,0 +1,20 @@
+﻿@model List<Model.EF.ProductCategory>
+
+
+<div>
+    <h3 class="ps-section__title" data-mask="features">Danh mục sản phẩm</h3>
+    <ul class="ps-masonry__filter">
+        <li class="current"><a href="/san-pham" data-filter="*">Xem tất cả<sup>8</sup></a></li>
+        @foreach (var item in Model)
+
+        {
+         
+            <li><a href="/san-pham/@item.MetaTitle-@item.ID">@item.Name<sup>1</sup></a></li>
+
+        }
+
+    </ul>
+</div>
+
+
+   
