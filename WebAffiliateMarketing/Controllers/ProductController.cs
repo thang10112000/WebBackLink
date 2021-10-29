@@ -30,7 +30,8 @@ namespace WebAffiliateMarketing.Controllers
         public ActionResult Detail(long id)
         {
             var product = new ProductDao().ViewDetail(id);
-           
+            ViewBag.Category= new ProductCategoryDao().ViewDetail( product.CategoryID.Value);
+            ViewBag.RelatedProducts = new ProductDao().ListRelatedProducts(id); // xem sản phẩm liên quan
             return View(product);
         }
     }
