@@ -73,15 +73,17 @@
 
         </div>
     </div>
+  
     <main class="ps-main">
-
+       
         @RenderBody()
 
-        <div>
-            @RenderSection("slide", required: false)
-        </div>
+
 
         <div class="footer">
+            <div>
+                @RenderSection("slide", required: false)
+            </div>
             @{ Html.RenderAction("Footer", "Home");}
         </div>
     </main>
