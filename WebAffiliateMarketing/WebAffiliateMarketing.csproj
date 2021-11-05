@@ -1819,6 +1819,7 @@
     <Content Include="Assets\client\images\user\5.jpg" />
     <Content Include="Assets\client\imgSanPham\dhhublot.png" />
     <Content Include="Assets\client\imgSanPham\jdmocha.jpg" />
+    <Content Include="Assets\client\imgSanPham\moto.jpg" />
     <Content Include="Assets\client\imgSanPham\r1250.jpg" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\jquery-3.6.0.min.js" />
