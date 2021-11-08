@@ -2492,7 +2492,7 @@ textarea.form-control {
   .ps-shoe .ps-shoe__price {
     display: inline-block;
     position: absolute;
-    top: 5px;
+    bottom: 0px;
     right: 10px;
     font-family: "Archivo Narrow", sans-serif;
     font-size: 20px;
@@ -6536,5 +6536,17 @@ html .bg--parallax {
 
 .pl-100 {
   padding-left: 100px; }
+.sizeimg{
+    width: 50rem;
+    height: 32rem;
+    object-fit:cover;
+   
+   
+}
+.sizeimg1 {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
 
 /*# sourceMappingURL=style.css.map */
