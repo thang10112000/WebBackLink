@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section jsFooter{
 
+    <script src="/Assets/client/js/controller/cartController.js"></script>
+    }
 <div class="ps-content pt-80 pb-80">
    
         <div class="ps-container">
@@ -38,9 +41,14 @@
                         </tbody>
                     </table>
                     <div class="ps-cart__actions">
-
+                        <div class="ps-cart__promotion">
+                           
+                            <div class="form-group">
+                                <button id="btnContinue" class="ps-btn ps-btn--gray">Tiếp tục mua sắm</button>
+                            </div>
+                        </div>
                         <div class="ps-cart__total">
-                            <a class="ps-btn" href="checkout.html">Tiếp tục mua sắm<i class="ps-icon-next"></i></a>
+                            <a class="ps-btn" href="checkout.html">Process to checkout<i class="ps-icon-next"></i></a>
                         </div>
                     </div>
                 }
