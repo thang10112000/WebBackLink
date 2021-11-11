@@ -2497,7 +2497,6 @@
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
-    <Content Include="Assets\admin\js\plugins2\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
@@ -3010,6 +3009,7 @@
     <Content Include="Assets\client\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js.map" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
+    <Content Include="Assets\admin\js\plugins2\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
