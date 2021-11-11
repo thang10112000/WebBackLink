@@ -3065,6 +3065,7 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Shared\HeaderCart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

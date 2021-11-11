@@ -49,7 +49,7 @@
             })
         });
 
-        $('.btn-delete').off('click').on('click', function (e) {
+        $('.ps-remove').off('click').on('click', function (e) {
             e.preventDefault();
             $.ajax({
                 data: { id: $(this).data('id') },

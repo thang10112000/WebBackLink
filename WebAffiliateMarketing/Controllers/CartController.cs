@@ -23,6 +23,16 @@ namespace WebAffiliateMarketing.Controllers
             }
             return View(list);
         }
+        public JsonResult Delete(long id)
+        {
+            var sessionCart = (List<CartItem>)Session[CartSession];
+            sessionCart.RemoveAll(x => x.Product.ID == id);
+            Session[CartSession] = sessionCart;
+            return Json(new
+            {
+                status = true
+            });
+        }
         public ActionResult AddItem(long productId, int quantity)
         {
             var product = new ProductDao().ViewDetail(productId);
