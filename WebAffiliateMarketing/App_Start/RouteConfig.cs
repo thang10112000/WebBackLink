@@ -23,14 +23,20 @@ namespace WebAffiliateMarketing
           name: "Product Detail",
           url: "chi-tiet/{metatitle}-{id}",
           defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
-          namespaces: new[] { "OnlineShop.Controllers" }
+          namespaces: new[] { "WebAffiliateMarketing.Controllers" }
       );
             routes.MapRoute(
             name: "About",
             url: "gioi-thieu",
             defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
-            namespaces: new[] { "OnlineShop.Controllers" }
+            namespaces: new[] { "WebAffiliateMarketing.Controllers" }
         );
+            routes.MapRoute(
+       name: "Contact",
+       url: "lien-he",
+       defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+       namespaces: new[] { "WebAffiliateMarketing.Controllers" }
+   );
             routes.MapRoute(
       name: "Cart",
       url: "gio-hang",

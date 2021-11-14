@@ -26,9 +26,9 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-
+                               
                                 <tr>
-                                    <td><a class="ps-product__preview" href="/chi-tiet/"><img class="sizeimg1" src="@item.Product.Image" alt=""> @item.Product.Name </a></td>
+                                    <td><a class="ps-product__preview" href="/chi-tiet"><img class="sizeimg1" src="@item.Product.Image" alt=""> @item.Product.Name </a></td>
 
                                     <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
 
