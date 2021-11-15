@@ -2000,6 +2000,7 @@
     <Content Include="Assets\client\plugins\slick\slick\slick.min.js" />
     <Content Include="Assets\client\resources\css\elements\_pagination.css" />
     <Content Include="Assets\client\resources\js\custom.js" />
+    <Content Include="Assets\client\template\newContact.html" />
     <Content Include="Assets\client\vendor\animate\animate.css" />
     <Content Include="Assets\client\vendor\animsition\css\animsition.css" />
     <Content Include="Assets\client\vendor\animsition\css\animsition.min.css" />

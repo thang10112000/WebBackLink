@@ -2,6 +2,7 @@
 using Model.EF;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,7 +36,14 @@ namespace WebAffiliateMarketing.Controllers
                 {
                     status = true
                 });
-                //send mail
+                //string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newContact.html"));
+
+                //content = content.Replace("{{CustomerName}}", name);
+                //content = content.Replace("{{Phone}}", mobile);
+                //content = content.Replace("{{Email}}", email);
+                //content = content.Replace("{{Address}}", address);
+                //content = content.Replace("{{Content}}", content);
+                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
             }
 
             else
