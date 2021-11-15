@@ -17,7 +17,6 @@ namespace Model.EF
         [StringLength(250)]
         public string Link { get; set; }
 
-        public long? ParentID { get; set; }
         public int? DisplayOrder { get; set; }
 
         [StringLength(50)]
@@ -26,5 +25,7 @@ namespace Model.EF
         public bool Status { get; set; }
 
         public int? TypeID { get; set; }
+
+        public long? ParentID { get; set; }
     }
 }

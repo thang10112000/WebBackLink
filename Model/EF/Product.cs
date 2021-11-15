@@ -62,6 +62,5 @@ namespace Model.EF
         public DateTime? TopHot { get; set; }
 
         public int? ViewCount { get; set; }
-        public object CreatedDate { get; internal set; }
     }
 }

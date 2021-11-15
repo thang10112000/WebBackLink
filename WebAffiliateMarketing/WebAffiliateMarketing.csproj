@@ -1823,6 +1823,7 @@
     <Content Include="Assets\client\imgSanPham\r1250.jpg" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\controller\cartController.js" />
+    <Content Include="Assets\client\js\controller\contactController.js" />
     <Content Include="Assets\client\js\jquery-3.6.0.min.js" />
     <Content Include="Assets\client\js\jquery.min.js" />
     <Content Include="Assets\client\js\login.js" />
