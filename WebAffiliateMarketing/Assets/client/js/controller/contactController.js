@@ -24,18 +24,20 @@
                 success: function (res) {
                     if (res.status == true) {
                         window.alert('Tin nhắn của bạn đã được gửi đi!');
-                        contact.resetForm();
+                       /* contact.resetForm();*/
+                        location.reload();
+                     
                     }
                 }
             });
         });
-    },
-    resetForm: function () {
-        $('#txtName').val('');
-        $('#txtMobile').val('');
-        $('#txtEmail').val('');
-        $('#txtAddress').val('');
-        $('#txtContent').val('');
+    //},
+    //resetForm: function () {
+    //    $('#txtName').val('');
+    //    $('#txtMobile').val('');
+    //    $('#txtEmail').val('');
+    //    $('#txtAddress').val('');
+    //    $('#txtContent').val('');
     }
 }
 contact.init();

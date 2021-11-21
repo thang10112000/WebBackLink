@@ -3083,6 +3083,10 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{3ec24326-f7be-4aff-9110-7a9d78011012}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{677ea9ba-d7de-41f7-8966-72af842f3df6}</Project>
       <Name>Model</Name>

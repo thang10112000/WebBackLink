@@ -1387,7 +1387,7 @@ textarea.form-control {
   -ms-border-radius: 0;
   border-radius: 0; }
 
-.ps-form--comment textarea.form-control {
+.ps-form--comment textarea.  {
   padding: 20px 15px; }
 
 .form-group--inline {
@@ -2494,7 +2494,7 @@ textarea.form-control {
     .ps-shoe .ps-shoe__price {
         display: inline-block;
         position: absolute;
-        bottom: 0px;
+        bottom: 15px;
         right: 10px;
         font-family: "Archivo Narrow", sans-serif;
         font-size: 20px;

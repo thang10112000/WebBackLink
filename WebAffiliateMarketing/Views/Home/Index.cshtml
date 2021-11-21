@@ -1,4 +1,4 @@
-﻿
+﻿@model Model.EF.Contact
 @{
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +7,11 @@
     var listFeatureProducts = (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
 }
 
+@section jsFooter{
 
+    <script src="/Assets/client/js/controller/contactController.js"></script>
+
+}
 
 <div class="ps-banner">
     @foreach (var item in slides)
@@ -46,62 +50,74 @@
 <div class="ps-section--features-product  ps-section @*masonry-root*@ pt-100 pb-100">
     <div class="ps-container">
         <div class="ps-section__header mb-50">
-            
+
 
             @{ Html.RenderAction("ProductCategory", "Product");}
 
         </div>
-        <div class="ps-section__content pb-50">
-            <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
-                <div class="ps-masonry">
-                    <div class="grid-sizer"></div>
-                    <div class="grid-item kids">
-                        <div class="grid-item__content-wrapper">
-                        
-                            @foreach (var item in listFeatureProducts)
-                            {
-                                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
-                                <div class="ps-shoes--carousel">
-                                    <div class="ps-shoe">
-                                        <div class="ps-shoe__thumbnail">
-                                            <div class="ps-badge"><span>New</span></div>
-                                            <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
-                                            <i class="ps-icon-heart"></i>
-                                                 </a>
-                                            <img  class="sizeimg" src="@item.Image" alt="@item.Name"><a class="ps-shoe__overlay" href="@url"></a>
-                                        </div>
-                                        <div class="ps-shoe__content">
-                                            @*<div class="ps-shoe__variants">
-                                                <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                <select class="ps-rating ps-shoe__rating">
-                                                    <option value="1">1</option>
-                                                    <option value="1">2</option>
-                                                    <option value="1">3</option>
-                                                    <option value="1">4</option>
-                                                    <option value="2">5</option>
-                                                </select>
-                                            </div>*@
-                                            <div class="ps-shoe__detail">
-                                                <a class="ps-shoe__name" href="@url">@item.Name</a>
-                                                <br />
-                                                <p class="ps-shoe__categories">,<a href="@url" alt="@item.Name">Xem sản phẩm</a></p>
-                                            
-                                                <p>  <span class="ps-shoe__price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
-                                                                         
-                                                   
+       
+            <div class="ps-section__content pb-50">
+
+                <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
+
+                    <div class="ps-masonry">
+                        @foreach (var item in listNewProducts)
+                        {
+                            var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                            <div class="grid-sizer"></div>
+
+                            <div class="grid-item kids">
+
+                                <div class="grid-item__content-wrapper">
+
+
+                                    <div class="ps-shoes--carousel">
+
+                                        <div class="ps-shoe">
+                                            <div class="ps-shoe__thumbnail">
+                                                <div class="ps-badge"><span>New</span></div>
+                                                <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
+                                                    <i class="ps-icon-heart"></i>
+                                                </a>
+                                                <img class="sizeimg" src="@item.Image" alt="@item.Name"><a class="ps-shoe__overlay" href="@url"></a>
+                                            </div>
+                                            <div class="ps-shoe__content">
+                                                @*<div class="ps-shoe__variants">
+                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
+                                    <select class="ps-rating ps-shoe__rating">
+                                        <option value="1">1</option>
+                                        <option value="1">2</option>
+                                        <option value="1">3</option>
+                                        <option value="1">4</option>
+                                        <option value="2">5</option>
+                                    </select>
+                                </div>*@
+                                                <div class="ps-shoe__detail">
+                                                    <a class="ps-shoe__name" href="@url">@item.Name</a>
+                                                    <br />
+                                                    <p class="ps-shoe__categories"><a href="@url" alt="@item.Name">Xem sản phẩm</a></p>
+
+                                                    <p>  <span class="ps-shoe__price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
+
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            }
 
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        }
                         </div>
-                    </div>
-                   
+
                 </div>
+                
             </div>
+        
         </div>
-    </div>
 </div>
 <div class="ps-section--offer">
     <div class="ps-column"><a class="ps-offer" href="/san-pham"><img src="~/Assets/client/images/mrOs9ZC.png" alt=""></a></div>
@@ -162,9 +178,12 @@
                     <h3 class="ps-section__title" data-mask="Sản phẩm mới">Sản phẩm mới</h3>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                    <div class="ps-owl-actions"><a class="ps-prev" href="/san-pham">
-                        <i class="ps-icon-arrow-right"></i>Prev</a>
-                    <a class="ps-next" href="#">Next<i class="ps-icon-arrow-left"></i></a></div>
+                    <div class="ps-owl-actions">
+                        <a class="ps-prev" href="/san-pham">
+                            <i class="ps-icon-arrow-right"></i>Prev
+                        </a>
+                        <a class="ps-next" href="#">Next<i class="ps-icon-arrow-left"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,29 +194,31 @@
                     var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
                     <div class="ps-shoes--carousel">
                         <div class="ps-shoe">
-                          
+
                             <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>New</span>
-                                    </div><a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
-                                <i class="ps-icon-heart"></i></a>
+                                <div class="ps-badge">
+                                    <span>New</span>
+                                </div><a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
+                                    <i class="ps-icon-heart"></i>
+                                </a>
                                 <img class="sizeimg" src="@item.Image" alt="@item.Name">
                                 <a class="ps-shoe__overlay" href="@url"></a>
                             </div>
                             <div class="ps-shoe__content">
                                 @*<div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>*@
+                                        <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
+                                        <select class="ps-rating ps-shoe__rating">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select>
+                                    </div>*@
                                 <div class="ps-shoe__detail">
                                     <a class="ps-shoe__name" href="@url">@item.Name</a>
-                                    
-                                    <p class="ps-shoe__categories"><a href="@url" alt="@item.Name"  >Xem sản phẩm</a></p>
+
+                                    <p class="ps-shoe__categories"><a href="@url" alt="@item.Name">Xem sản phẩm</a></p>
 
                                     <span class="ps-shoe__price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span>
                                 </div>
@@ -313,26 +334,26 @@
         <div id="contact-map" data-address="New York, NY" data-title="BAKERY LOCATION!" data-zoom="17"></div>
         <div class="ps-home-contact__form">
             <header>
-                <h3>Contact Us</h3>
-                <p>Learn about our company profile, communityimpact, sustainable motivation, and more.</p>
+                <h3>Liên hệ</h3>
+                <p>Bạn có gì thắc mắc không, vui lòng liên hệ với chúng tôi.</p>
             </header>
 
             <footer>
                 <form action="product-listing.html" method="post">
                     <div class="form-group">
-                        <label>Name<span>*</span></label>
-                        <input class="form-control" type="text">
+                        <label>Tên<span>*</span></label>
+                        <input id="txtName" placeholder="" class="form-control" type="text">
                     </div>
                     <div class="form-group">
                         <label>Email<span>*</span></label>
-                        <input class="form-control" type="email">
+                        <input id="txtEmail" placeholder="" class="form-control" type="text">
                     </div>
                     <div class="form-group">
-                        <label>Your message<span>*</span></label>
-                        <textarea class="form-control" rows="4"></textarea>
+                        <label>Lời nhắn của bạn<span>*</span></label>
+                        <textarea id="txtContent" placeholder="" class="form-control" rows="4"></textarea>
                     </div>
                     <div class="form-group text-center">
-                        <button class="ps-btn">Send Message<i class="fa fa-angle-right"></i></button>
+                        <button id="btnSend" class="ps-btn">Gửi tin nhắn<i class="fa fa-angle-right"></i></button>
                     </div>
                 </form>
             </footer>
