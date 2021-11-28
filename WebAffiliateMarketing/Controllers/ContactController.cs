@@ -1,4 +1,7 @@
-﻿using Model.Dao;
+﻿
+using Common;
+using Model;
+using Model.Dao;
 using Model.EF;
 using System;
 using System.Collections.Generic;
@@ -19,7 +22,7 @@ namespace WebAffiliateMarketing.Controllers
         }
 
         [HttpPost]
-        public JsonResult Send(string name, string mobile, string email, string address, string content)
+        public JsonResult Send(string name, string mobile, string address, string email, string content)
         {
             var feedback = new Feedback();
             feedback.Name = name;
@@ -29,6 +32,18 @@ namespace WebAffiliateMarketing.Controllers
             feedback.Content = content;
             feedback.Address = address;
 
+            string a = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newContact.html"));
+            a = a.Replace("{{CustomerName}}", name);
+            a = a.Replace("{{Phone}}", mobile);
+            a = a.Replace("{{Email}}", email);
+            a = a.Replace("{{Address}}", address);
+            a = a.Replace("{{Require}}", content);
+            var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+            new MailHelper().SendMail(email, "Tin nhắn mới", a);
+            new MailHelper().SendMail(toEmail, "Tin nhắn mới", a);
+
+
             var id = new ContactDao().InsertFeedBack(feedback);
             if (id > 0)
             {
@@ -36,14 +51,7 @@ namespace WebAffiliateMarketing.Controllers
                 {
                     status = true
                 });
-                //string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newContact.html"));
-
-                //content = content.Replace("{{CustomerName}}", name);
-                //content = content.Replace("{{Phone}}", mobile);
-                //content = content.Replace("{{Email}}", email);
-                //content = content.Replace("{{Address}}", address);
-                //content = content.Replace("{{Content}}", content);
-                //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                //send mail
             }
 
             else

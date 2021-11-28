@@ -71,6 +71,15 @@ namespace Model.Dao
             //phương thức tìm kiếm thêm khóa chính
             return db.Users.Find(id);
         }
+
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(x => x.UserName == userName) > 0;
+        }
+        public bool CheckEmail(string email)
+        {
+            return db.Users.Count(x => x.Email == email) > 0;
+        }
         public IEnumerable<User> ListAllPaging (string searchString, int page , int pageSize) // phương thức lấy ra các bảng ghi 
         {
             IQueryable<User> model = db.Users;

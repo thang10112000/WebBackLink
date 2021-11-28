@@ -42,6 +42,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BotDetect, Version=3.0.16.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.3.0.16.0\lib\net45\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.UI.Mvc, Version=3.0.16.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.3.0.16.0\lib\net45\BotDetect.Web.UI.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="CKFinder">
       <HintPath>..\..\..\Downloads\Compressed\ckfinder_aspnet_2.6.2.1\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
@@ -69,6 +75,9 @@
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\lib\net45\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -1644,6 +1653,31 @@
     <Content Include="Assets\admin\vendor\select2\select2.js" />
     <Content Include="Assets\admin\vendor\select2\select2.min.css" />
     <Content Include="Assets\admin\vendor\select2\select2.min.js" />
+    <Content Include="Assets\clientLoginRegister\css\style.css" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Assets\clientLoginRegister\images\signin-image.jpg" />
+    <Content Include="Assets\clientLoginRegister\images\signup-image.jpg" />
+    <Content Include="Assets\clientLoginRegister\js\main.js" />
+    <Content Include="Assets\clientLoginRegister\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Assets\clientLoginRegister\vendor\jquery\jquery.min.js" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
@@ -2539,10 +2573,6 @@
     <Content Include="Assets\admin\js\plugins2\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\User\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\client\css\.DS_Store" />
     <Content Include="Assets\client\css\bootstrap\.DS_Store" />
     <Content Include="Assets\client\css\bootstrap\mixins\.DS_Store" />
@@ -3012,6 +3042,158 @@
     <Content Include="Assets\client\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
     <Content Include="Assets\client\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Assets\clientLoginRegister\css\style.css.map" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="Assets\clientLoginRegister\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="Assets\clientLoginRegister\scss\common\extend.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\common\fonts.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\common\global.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\common\minxi.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\common\variables.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\layouts\main.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\layouts\responsive.scss" />
+    <Content Include="Assets\clientLoginRegister\scss\style.scss" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3021,9 +3203,9 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -3048,10 +3230,12 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3070,6 +3254,8 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Shared\HeaderCart.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoginRegister.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3084,7 +3270,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{3ec24326-f7be-4aff-9110-7a9d78011012}</Project>
+      <Project>{bb38dec2-ad85-482b-aeba-542dcdf19d98}</Project>
       <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
@@ -3120,6 +3306,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -6,8 +6,8 @@
         $('#btnSend').off('click').on('click', function () {
             var name = $('#txtName').val();
             var mobile = $('#txtMobile').val();
-            var email = $('#txtEmail').val();
             var address = $('#txtAddress').val();
+            var email = $('#txtEmail').val();
             var content = $('#txtContent').val();
 
             $.ajax({
@@ -17,27 +17,25 @@
                 data: {
                     name: name,
                     mobile: mobile,
-                    email: email,
                     address: address,
+                    email: email,
                     content: content
                 },
                 success: function (res) {
                     if (res.status == true) {
-                        window.alert('Tin nhắn của bạn đã được gửi đi!');
-                       /* contact.resetForm();*/
-                        location.reload();
-                     
+                        alert('Tin nhắn của bạn đã được gửi cho  chúng tôi');
+                        contact.resetForm();
                     }
                 }
             });
         });
-    //},
-    //resetForm: function () {
-    //    $('#txtName').val('');
-    //    $('#txtMobile').val('');
-    //    $('#txtEmail').val('');
-    //    $('#txtAddress').val('');
-    //    $('#txtContent').val('');
+    },
+    resetForm: function () {
+        $('#txtName').val('');
+        $('#txtMobile').val('');
+        $('#txtAddress').val('');
+        $('#txtEmail').val('');
+        $('#txtContent').val('');
     }
 }
 contact.init();
