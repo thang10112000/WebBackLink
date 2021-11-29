@@ -64,11 +64,11 @@ namespace WebAffiliateMarketing
       namespaces: new[] { "WebAffiliateMarketing.Controllers" }
   );
             routes.MapRoute(
-       name: "Login",
-       url: "dang-nhap",
-       defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
-       namespaces: new[] { "WebAffiliateMarketing.Controllers" }
-   );
+   name: "Login",
+   url: "dang-nhap",
+   defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+   namespaces: new[] { "WebAffiliateMarketing.Controllers" }
+);
             routes.MapRoute(
        name: "Search",
        url: "tim-kiem",

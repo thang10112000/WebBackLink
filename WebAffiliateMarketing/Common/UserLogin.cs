@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebAffiliateMarketing.Common
+namespace WebAffiliateMarketing
 {
     [Serializable] //chuyển đổi về dạng trung gian để lưu trữ , truyền thông
     public class UserLogin
@@ -11,5 +11,6 @@ namespace WebAffiliateMarketing.Common
 
         public long UserID { set; get; }
         public string UserName { set; get; }
+        public string GroupID { set; get; }
     }
 }
