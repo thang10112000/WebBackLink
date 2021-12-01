@@ -6543,19 +6543,19 @@ html .bg--parallax {
     width: 50rem;
     height: 32rem;
     object-fit:cover;
-   
-   
+ 
 }
+
 .sizeimg1 {
     width: 10rem;
     height: 10rem;
     object-fit: cover;
 }
 .wrap-input100 {
-    width: 100%;
+    width: 90%;
     position: relative;
-   
-    
+    background-color: #fff;
+    border: 1px solid #999999;
     border-radius: 2px;
 }
 .validate-input {

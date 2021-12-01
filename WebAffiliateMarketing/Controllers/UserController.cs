@@ -55,7 +55,7 @@ namespace WebAffiliateMarketing.Controllers
                 }
                 else if (result == -2)
                 {
-                    ModelState.AddModelError("", "Mật khẩu không đúng.");
+                    ModelState.AddModelError("", "Mật khẩu không chính xác.");
                 }
                 else
                 {
