@@ -15,29 +15,30 @@
              
             </div>
             <div class="ps-product__columns">
-                <div class="ps-product__column">
-                    @foreach (var item in Model)
-                    {
-                        var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                @foreach (var item in Model)
+                {
+                    var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                    <div class="ps-product__column">
+
                         <div class="ps-shoe mb-30">
                             <div class="ps-shoe__thumbnail">
                                 <div class="ps-badge"><span>New</span></div>
                                 <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div>
                                 <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
                                     <i class="ps-icon-heart"></i>
-                                </a><img  class="sizeimg" src="@item.Image" alt=""><a class="ps-shoe__overlay" href="@link"></a>
+                                </a><img class="sizeimg" src="@item.Image" alt=""><a class="ps-shoe__overlay" href="@link"></a>
                             </div>
                             <div class="ps-shoe__content">
                                 @*<div class="ps-shoe__variants">
-                                <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                <select class="ps-rating ps-shoe__rating">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>*@
+                            <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
+                            <select class="ps-rating ps-shoe__rating">
+                                <option value="1">1</option>
+                                <option value="1">2</option>
+                                <option value="1">3</option>
+                                <option value="1">4</option>
+                                <option value="2">5</option>
+                            </select>
+                        </div>*@
                                 <div class="ps-shoe__detail">
                                     <a class="ps-shoe__name" href="@link">@item.Name</a>
                                     <p class="ps-shoe__categories"><a href="@link"> Xem sản phẩm</a></p>
@@ -47,10 +48,10 @@
                                 </div>
                             </div>
                         </div>
-                    }
+                       
+                    </div>
+                }
                 </div>
-
-            </div>
          
 
             <!--Phân trang-->

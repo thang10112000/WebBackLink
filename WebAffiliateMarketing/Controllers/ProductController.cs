@@ -21,7 +21,7 @@ namespace WebAffiliateMarketing.Controllers
             var model = new ProductCategoryDao().ListAll();
             return PartialView(model);
         }
-        public ActionResult Category(long cateId, int page = 1 , int pageSize = 1)
+        public ActionResult Category(long cateId, int page = 1 , int pageSize = 10)
         {
 
             var category = new CategoryDao().ViewDetail(cateId);

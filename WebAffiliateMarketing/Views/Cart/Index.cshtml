@@ -1,5 +1,6 @@
 ﻿@model List<WebAffiliateMarketing.Models.CartItem>
 @{
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,7 +27,8 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                               
+                             
+
                                 <tr>
                                     <td><a class="ps-product__preview" href="/chi-tiet"><img class="sizeimg1" src="@item.Product.Image" alt=""> @item.Product.Name </a></td>
 
