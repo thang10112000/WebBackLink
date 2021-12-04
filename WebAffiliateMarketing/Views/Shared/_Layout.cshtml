@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/Assets/client/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
     <link rel="stylesheet" href="/Assets/client/plugins/slick/slick/slick.css">
     <link rel="stylesheet" href="/Assets/client/plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link href="/Assets/client/js/jquery-ui.css" rel="stylesheet" />
     <link rel="stylesheet" href="/Assets/client/plugins/Magnific-Popup/dist/magnific-popup.css">
     <link rel="stylesheet" href="/Assets/client/plugins/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="/Assets/client/plugins/revolution/css/settings.css">
@@ -58,10 +59,11 @@
                 @{Html.RenderAction("MainMenu", "Home"); }
 
                 <div class="navigation__column right">
-                    <form class="ps-search--header" action="do_action" method="post">
-                        <input class="form-control" type="text" placeholder="Tìm kiếm…">
+                    <form class="ps-search--header" action="/tim-kiem" method="get">
+                        <input class="form-control" id="txtKeyword" name="keyword" type="text" placeholder="Tìm kiếm…">
                         <button><i class="ps-icon-search"></i></button>
                     </form>
+
                     @*giỏ hàng*@
                     @{ Html.RenderAction("HeaderCart", "Home");}
                     <div class="menu-toggle"><span></span></div>
@@ -91,11 +93,13 @@
         </div>
     </main>
 
+
     <!-- JS Library-->
     <script src="/Assets/client/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/jquery/dist/jquery.min.js"></script>
     <script src="/Assets/client/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-    <link href="~/Assets/client/bootstrap-4.0.0-dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="/Assets/client/bootstrap-4.0.0-dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <script src="/Assets/client/js/jquery-ui.js"></script>
     <link href="/Assets/client/bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet" />
     <script type="text/javascript" src="/Assets/client/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
@@ -123,6 +127,8 @@
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
     <!-- Custom scripts-->
     <script type="text/javascript" src="/Assets/client/js/main.js"></script>
+
+    <script src="/Assets/client/js/controller/baseController.js"></script>
     @RenderSection("jsFooter", required: false)
 </body>
 </html>

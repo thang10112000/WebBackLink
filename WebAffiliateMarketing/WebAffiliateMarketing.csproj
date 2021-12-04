@@ -1834,9 +1834,12 @@
     <Content Include="Assets\client\imgSanPham\moto.jpg" />
     <Content Include="Assets\client\imgSanPham\r1250.jpg" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
+    <Content Include="Assets\client\js\controller\baseController.js" />
     <Content Include="Assets\client\js\controller\cartController.js" />
     <Content Include="Assets\client\js\controller\contactController.js" />
     <Content Include="Assets\client\js\jquery-3.6.0.min.js" />
+    <Content Include="Assets\client\js\jquery-ui.css" />
+    <Content Include="Assets\client\js\jquery-ui.js" />
     <Content Include="Assets\client\js\jquery.min.js" />
     <Content Include="Assets\client\js\login.js" />
     <Content Include="Assets\client\js\main.js" />
@@ -3159,6 +3162,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
