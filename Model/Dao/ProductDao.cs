@@ -46,10 +46,24 @@ namespace Model.Dao
             var product = db.Products.Find(productId);
             return db.Products.Where(x => x.ID != productId && x.CategoryID == product.CategoryID).ToList();
         }
-        public Product ViewDetail(long id)
+        public Product ViewDetailAdmin(long id)
         {
             return db.Products.Find(id);
         }
-
+        public Product ViewDetail(long id)
+        {
+            var model = db.Products.Find(id);
+            model.ViewCount++;
+            db.SaveChanges();
+            return model;
+        }
+        public long Insert(Product entity)
+        {
+            db.Products.Add(entity);
+            entity.CreateDate = DateTime.Now;
+            entity.ViewCount = 0;
+            db.SaveChanges();
+            return entity.ID;
+        }
     }
 }
