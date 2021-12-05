@@ -21,6 +21,12 @@ namespace WebAffiliateMarketing.Controllers
             var model = new ProductCategoryDao().ListAll();
             return PartialView(model);
         }
+        [ChildActionOnly]
+        public PartialViewResult ProductCategory2()
+        {
+            var model = new ProductCategoryDao().ListAll();
+            return PartialView(model);
+        }
         public JsonResult ListName(string q)
         {
             var data = new ProductDao().ListName(q);

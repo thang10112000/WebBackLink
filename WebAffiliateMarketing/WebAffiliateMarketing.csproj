@@ -1829,6 +1829,7 @@
     <Content Include="Assets\client\images\user\3.jpg" />
     <Content Include="Assets\client\images\user\4.jpg" />
     <Content Include="Assets\client\images\user\5.jpg" />
+    <Content Include="Assets\client\imgSanPham\daychuyen.png" />
     <Content Include="Assets\client\imgSanPham\dhhublot.png" />
     <Content Include="Assets\client\imgSanPham\jdmocha.jpg" />
     <Content Include="Assets\client\imgSanPham\moto.jpg" />
@@ -3163,6 +3164,7 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Shared\ProductCategory2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
