@@ -1,11 +1,11 @@
-﻿
+﻿@model PagedList.IPagedList<Model.EF.Content>
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = "Quản lý người dùng";
+    ViewBag.Title = "Quản lý tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @* khai báo model để lấy ds listPage   *@
-@model PagedList.IPagedList<Model.EF.User>
-@using PagedList.Mvc;
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,15 +25,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Danh sách admin</h2>
+                    <h2 class="heading-section">Danh sách tin tức</h2>
                 </div>
             </div>
             @section jsFooter{
-                <script src="/Assets/admin/js/controller/userController.js"></script>
-            }
-            @using (Html.BeginForm("Index", "User", FormMethod.Get))
-            {
 
+            }
+            @using (Html.BeginForm("Index", "Content", FormMethod.Get))
+            {
                 <div class="form-group">
                     <div class="ps-search--header" method="post">
 
@@ -42,7 +41,10 @@
                     </div>
                 </div>
                 <br />
-                <a type="button" class="btn btn-primary btn-lg" href="/Admin/User/Create">Thên tài khoản</a>
+                <div>
+                    <a class="btn btn-primary btn-lg" href="/Admin/Content/Create">Thêm mới</a>
+                </div>
+
             }
             <div class="row">
                 <div class="col-md-12">
@@ -50,12 +52,9 @@
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Họ và tên</th>
-                                    <th>Tài khoản</th>
-                                    <th>Mật khẩu</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Email</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Ngày đăng</th>
                                     <th>Trạng thái</th>
                                     <th>&nbsp;</th>
                                 </tr>
@@ -65,16 +64,15 @@
                                 {
                                     <tr class="alert" role="alert">
 
-                                        <td scope="row">@item.ID</td>
+                                      
                                         <td>@item.Name</td>
-                                        <td>@item.UserName</td>
-                                        <td>@item.Password</td>
-                                        <td>@item.Phone</td>
-                                        <td>@item.Email</td>
+                                        <td>@item.Image</td>
+                                        <td>@item.CreateDate</td>
+
                                         <td><a href="#" class="btn-active" data-id="@item.ID">@(item.Status?"Kích hoạt" : "Khóa")</a></td>
 
                                         <td id="row_@item.ID">
-                                            <a href="/Admin/User/Edit/@item.ID">Sửa</a>
+                                            <a href="/Admin/Content/Edit/@item.ID">Sửa</a>
                                             |
                                             @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
                                        {

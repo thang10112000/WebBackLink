@@ -15,6 +15,7 @@ namespace Model.EF
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
+        public virtual DbSet<ContentTag> ContentTags { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Footer> Footers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
@@ -110,6 +111,9 @@ namespace Model.EF
             modelBuilder.Entity<ProductCategory>()
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
+            modelBuilder.Entity<ContentTag>()
+               .Property(e => e.TagID)
+               .IsUnicode(false);
 
             modelBuilder.Entity<ProductCategory>()
                 .Property(e => e.MetaDescriptions)
@@ -164,6 +168,6 @@ namespace Model.EF
                 .IsUnicode(false);
         }
 
-        public System.Data.Entity.DbSet<Model.ViewModel.ProductViewModel> ProductViewModels { get; set; }
+       
     }
 }

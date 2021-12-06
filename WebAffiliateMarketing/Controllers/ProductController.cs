@@ -16,12 +16,14 @@ namespace WebAffiliateMarketing.Controllers
             return View();
         }
         [ChildActionOnly]
+        [OutputCache(Duration = 3600 * 24)]
         public PartialViewResult ProductCategory()
         {
             var model = new ProductCategoryDao().ListAll();
             return PartialView(model);
         }
         [ChildActionOnly]
+        [OutputCache(Duration = 3600 * 24)]
         public PartialViewResult ProductCategory2()
         {
             var model = new ProductCategoryDao().ListAll();
@@ -81,6 +83,7 @@ namespace WebAffiliateMarketing.Controllers
 
             return View(model);
         }
+        [OutputCache(CacheProfile = "Cache1DayForProduct")]
         public ActionResult Detail(long id)
         {
             var product = new ProductDao().ViewDetail(id);

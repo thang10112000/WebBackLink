@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Model.EF.Content>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="ps-blog-grid pt-80 pb-80">
+        <div class="ps-container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
+                    <div class="ps-post--2">
+                        @foreach (var item in Model)
+                        {
+                            var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img src="@item.Image" class="sizeimg3" alt=""></div>
+                            <div class="ps-post__container">
+                                <header class="ps-post__header">
+                                    <a class="ps-post__title" href="@link">@item.Name</a>
+                                    <p>Posted by <a href="#">@item.CreateBy</a> on @item.CreateDate  </p>
+                                </header>
+                                <div class="ps-post__content">
+                                    <p>@item.Description</p>
+                                </div>
+                                <footer class="ps-post__footer">
+                                    <a class="ps-post__morelink" href="@link">Đọc thêm<i class="ps-icon-arrow-left"></i></a>
+
+                                </footer>
+                            </div>
+                        }
+                    </div>
+                  
+
+                    <div class="mt-30">
+                        <!--Phân trang-->
+                        @if (ViewBag.TotalPage > 1)
+                        {
+                            var pageDisplay = (int)ViewBag.MaxPage;
+                            int totalPage = (int)ViewBag.TotalPage;
+                            int currentPage = ((int)ViewBag.Page);
+
+                            // Create numeric links
+                            var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                            var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                            var link = "/tin-tuc" ;
+                            <div class="ps-product-action">
+                                <div class="ps-pagination">
+                                    <ul class="pagination">
+                                        @if (currentPage > ViewBag.First)
+                                        {
+                                            <li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
+                                            <li>
+                                                <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
+                                            </li>
+                                        }
+                                        @for (int i = startPageIndex; i <= endPageIndex; i++)
+                                        {
+                                            if (currentPage == i)
+                                            {
+
+                                                <li> <a href="@link?page=@i" class="active" title="Trang @i">@i</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="@link?page=@i" title="Trang @i" class="pos">@i</a></li>
+                                            }
+                                        }
+                                        @if (currentPage < totalPage)
+                                        {
+                                            <li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+                                            <li> <a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div> }
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+         
+                    @*<aside class="ps-widget--sidebar">
+                        <div class="ps-widget__header">
+                            <h3>Tags</h3>
+                        </div>
+                        <div class="ps-widget__content">
+                            <ul class="ps-tags">
+                                <li><a href="product-listing.html">Men</a></li>
+                                <li><a href="product-listing.html">Female</a></li>
+                                <li><a href="product-listing.html">B&G</a></li>
+                                <li><a href="product-listing.html">ugly fashion</a></li>
+                                <li><a href="product-listing.html">Nike</a></li>
+                                <li><a href="product-listing.html">Dior</a></li>
+                                <li><a href="product-listing.html">Adidas</a></li>
+                                <li><a href="product-listing.html">Diour</a></li>
+                            </ul>
+                        </div>
+                    </aside>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    

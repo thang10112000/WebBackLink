@@ -92,6 +92,7 @@
     <Compile Include="EF\ClickShopDbContext.cs" />
     <Compile Include="EF\Contact.cs" />
     <Compile Include="EF\Content.cs" />
+    <Compile Include="EF\ContentTag.cs" />
     <Compile Include="EF\Feedback.cs" />
     <Compile Include="EF\Footer.cs" />
     <Compile Include="EF\Menu.cs" />
@@ -126,6 +127,12 @@
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.6.0.min.map" />
     <None Include="Scripts\jquery-3.6.0.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bb38dec2-ad85-482b-aeba-542dcdf19d98}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
