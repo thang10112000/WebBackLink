@@ -49,6 +49,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             return View(content);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(Content model)
         {
             if (ModelState.IsValid)
