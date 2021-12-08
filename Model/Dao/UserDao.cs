@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Model.EF;
 using PagedList.Mvc;
 using PagedList;
+using Common;
+
 namespace Model.Dao
 {
     public class UserDao
@@ -48,18 +50,104 @@ namespace Model.Dao
                 }
                 user.Address = entity.Address;
                 user.Email = entity.Email;
-                user.Phone = entity.Phone;
                 user.ModifiedBy = entity.ModifiedBy;
                 user.ModifiedDate = DateTime.Now;
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
+                //logging
                 return false;
-
             }
-           
+
         }
+
+        public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<User> model = db.Users;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
+            }
+
+            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
+        }
+
+        public User GetById(string userName)
+        {
+            return db.Users.SingleOrDefault(x => x.UserName == userName);
+        }
+        public User ViewDetail(int id)
+        {
+            return db.Users.Find(id);
+        }
+        public List<string> GetListCredential(string userName)
+        {
+            var user = db.Users.Single(x => x.UserName == userName);
+            var data = (from a in db.Credentials
+                        join b in db.UserGroups on a.UserGroupID equals b.ID
+                        join c in db.Roles on a.RoleID equals c.ID
+                        where b.ID == user.GroupID
+                        select new
+                        {
+                            RoleID = a.RoleID,
+                            UserGroupID = a.UserGroupID
+                        }).AsEnumerable().Select(x => new Credential()
+                        {
+                            RoleID = x.RoleID,
+                            UserGroupID = x.UserGroupID
+                        });
+            return data.Select(x => x.RoleID).ToList();
+
+        }
+        public int Login(string userName, string passWord, bool isLoginAdmin = false)
+        {
+            var result = db.Users.SingleOrDefault(x => x.UserName == userName);
+            if (result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (isLoginAdmin == true)
+                {
+                    if (result.GroupID == CommonConstants.ADMIN_GROUP || result.GroupID == CommonConstants.MOD_GROUP)
+                    {
+                        if (result.Status == false)
+                        {
+                            return -1;
+                        }
+                        else
+                        {
+                            if (result.Password == passWord)
+                                return 1;
+                            else
+                                return -2;
+                        }
+                    }
+                    else
+                    {
+                        return -3;
+                    }
+                }
+                else
+                {
+                    if (result.Status == false)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (result.Password == passWord)
+                            return 1;
+                        else
+                            return -2;
+                    }
+                }
+            }
+        }
+
         public bool ChangeStatus(long id)
         {
             var user = db.Users.Find(id);
@@ -80,11 +168,7 @@ namespace Model.Dao
             {
                 return false;
             }
-        }
-        public User ViewDetail(int id)
-        {
-            //phương thức tìm kiếm thêm khóa chính
-            return db.Users.Find(id);
+
         }
 
         public bool CheckUserName(string userName)
@@ -94,42 +178,6 @@ namespace Model.Dao
         public bool CheckEmail(string email)
         {
             return db.Users.Count(x => x.Email == email) > 0;
-        }
-        public IEnumerable<User> ListAllPaging (string searchString, int page , int pageSize) // phương thức lấy ra các bảng ghi 
-        {
-            IQueryable<User> model = db.Users;
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
-
-            }
-            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
-        }
-        public User GetById(string userName)
-        {
-            return db.Users.SingleOrDefault(x => x.UserName == userName);
-        }
-        public int Login(string userName, string passWord)
-        {
-            var res = db.Users.SingleOrDefault(x => x.UserName == userName);
-            if (res == null)
-            {
-                return 0;
-            }
-            else
-            {
-                if (res.Status == false)
-                {
-                    return -1;
-                }
-                else
-                {
-                    if (res.Password == passWord)
-                        return 1;
-                    else
-                        return -2;
-                }
-            }
         }
     }
 }

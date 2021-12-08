@@ -3101,6 +3101,7 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_401.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3132,6 +3133,7 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\HasCredentialAttribute.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -3171,6 +3173,7 @@
     <Content Include="Views\Content\Index.cshtml" />
     <Content Include="Views\Content\Detail.cshtml" />
     <Content Include="Views\Content\Tag.cshtml" />
+    <Content Include="Views\Shared\_401.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

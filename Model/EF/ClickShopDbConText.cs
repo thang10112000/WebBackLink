@@ -29,6 +29,8 @@ namespace Model.EF
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserGroup> UserGroups { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Credential> Credentials { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -55,6 +57,17 @@ namespace Model.EF
             modelBuilder.Entity<Content>()
                 .Property(e => e.CreateBy)
                 .IsUnicode(false);
+            modelBuilder.Entity<Credential>()
+              .Property(e => e.UserGroupID)
+              .IsUnicode(false);
+
+            modelBuilder.Entity<Credential>()
+                .Property(e => e.RoleID)
+                .IsUnicode(false);
+            modelBuilder.Entity<Role>()
+               .Property(e => e.ID)
+               .IsUnicode(false);
+
 
             modelBuilder.Entity<Content>()
                 .Property(e => e.ModifiedBy)

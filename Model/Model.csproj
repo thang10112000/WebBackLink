@@ -93,6 +93,7 @@
     <Compile Include="EF\Contact.cs" />
     <Compile Include="EF\Content.cs" />
     <Compile Include="EF\ContentTag.cs" />
+    <Compile Include="EF\Credential.cs" />
     <Compile Include="EF\Feedback.cs" />
     <Compile Include="EF\Footer.cs" />
     <Compile Include="EF\Menu.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="EF\OrderDetail.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\ProductCategory.cs" />
+    <Compile Include="EF\Role.cs" />
     <Compile Include="EF\Slide.cs" />
     <Compile Include="EF\SystemConfig.cs" />
     <Compile Include="EF\Tag.cs" />
