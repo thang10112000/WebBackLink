@@ -233,6 +233,10 @@ namespace Model.Dao
                          });
             return model.ToList();
         }
+        public List<Content> ListNewContent(int top)
+        {
+            return db.Contents.OrderByDescending(x => x.CreateDate).Take(top).ToList();
+        }
 
     }
 }
