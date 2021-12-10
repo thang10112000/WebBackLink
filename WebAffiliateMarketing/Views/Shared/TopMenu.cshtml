@@ -3,6 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
+                <p class="addthis_inline_follow_toolbox"></p>
                 <p>Chào mừng bạn đến với Click Shop</p>
             </div>
           
@@ -23,14 +24,15 @@
                 }
                 else
                 {
-            <div class="header__actions">
-                <a>Xin Chào:@session.UserName</a>
-                <a>
-                    @Html.ActionLink("Đăng xuất", "Logout", "User")
-                </a>
-            </div>
-                        }
+                    <div class="header__actions">
+                        <a>Xin Chào:@session.UserName</a>
+                        <a>
+                            @Html.ActionLink("Đăng xuất", "Logout", "User")
+                        </a>
                     </div>
+                }
+              
+            </div>
 
                 </div>
     </div>

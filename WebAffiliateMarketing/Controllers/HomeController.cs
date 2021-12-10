@@ -1,6 +1,7 @@
 ﻿using Model.Dao;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +21,11 @@ namespace WebAffiliateMarketing.Controllers
             ViewBag.NewProducts = productDao.ListNewProduct(4);
             ViewBag.NewContents = new ContentDao().ListNewContent(3);
             ViewBag.ListFeatureProducts = productDao.ListFeatureProduct(4);
+
+            //set seo title
+            ViewBag.Title = ConfigurationManager.AppSettings["HomeTitle"];
+            ViewBag.Keywords = ConfigurationManager.AppSettings["HomeKeyword"];
+            ViewBag.Descriptions = ConfigurationManager.AppSettings["HomeDescriptions"];
             return View();
         }
         [ChildActionOnly]
