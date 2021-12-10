@@ -6551,6 +6551,11 @@ html .bg--parallax {
     height: 10rem;
     object-fit: cover;
 }
+.sizeimg2 {
+    width: 30rem;
+    height: 5rem;
+    object-fit: cover;
+}
 .sizeimg3 {
     width: 49rem;
     height: 28rem;

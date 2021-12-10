@@ -74,5 +74,10 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             var dao = new CategoryDao();
             ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedId);
         }
+        public ActionResult Delete(int id)
+        {
+            new ContentDao().Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

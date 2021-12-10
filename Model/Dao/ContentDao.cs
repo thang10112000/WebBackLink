@@ -74,6 +74,21 @@ namespace Model.Dao
         {
             return db.Tags.Find(id);
         }
+        public bool Delete(int id)
+        {
+            try
+            {
+                var content = db.Contents.Find(id);
+                db.Contents.Remove(content);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
         public IEnumerable<Content> ListAllPaging(string searchString, int page, int pageSize) // phương thức lấy ra các bảng ghi 
         {
             IQueryable<Content> model = db.Contents;

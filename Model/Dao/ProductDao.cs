@@ -1,5 +1,6 @@
 ﻿using Model.EF;
 using Model.ViewModel;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,16 @@ namespace Model.Dao
         public List<string> ListName(string keyword)
         {
             return db.Products.Where(x => x.Name.Contains(keyword)).Select(x => x.Name).ToList();
+        }
+        public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<Product> model = db.Products;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Name.Contains(searchString) || x.Name.Contains(searchString));
+            }
+
+            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
         /// <summary>
         /// Get list product by category
@@ -99,6 +110,81 @@ namespace Model.Dao
             entity.ViewCount = 0;
             db.SaveChanges();
             return entity.ID;
+        }
+        public int? InsertViewCount(Product entity)
+        {
+            var product = db.Products.Find(entity.ID);
+            product.ViewCount = entity.ViewCount;
+            db.SaveChanges();
+            return product.ViewCount + 1;
+
+        }
+        public bool Update(Product entity)
+        {
+            try
+            {
+                var product = db.Products.Find(entity.ID);
+                product.Name = entity.Name;
+                product.MetaTitle = entity.MetaTitle;
+                product.Description = entity.Description;
+                product.Image = entity.Image;
+                product.MoreImages = entity.MoreImages;
+                product.Price = entity.Price;
+                product.CategoryID = entity.CategoryID;
+                product.Detail = entity.Detail;
+                product.Link = entity.Link;
+                product.Status = entity.Status;
+                product.ModifiedBy = entity.ModifiedBy;
+                product.ModifiedDate = DateTime.Now;
+                product.TopHot = entity.TopHot;
+                product.ViewCount = entity.ViewCount;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+        public IEnumerable<Product> ListPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<Product> model = db.Products;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Name.Contains(searchString) || x.MetaTitle.Contains(searchString));
+            }
+
+            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
+        }
+        public Product ViewDetail(int id)
+        {
+            return db.Products.Find(id);
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                var product = db.Products.Find(id);
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+        public List<Product> ListAllProduct()
+        {
+            return db.Products.OrderByDescending(x => x.CreateDate).ToList();
+        }
+        public void UpdateImages(long productId, string images)
+        {
+            var product = db.Products.Find(productId);
+            product.MoreImages = images;
+            db.SaveChanges();
         }
     }
 }
