@@ -35,7 +35,8 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 var session = (UserLogin)Session[CommonConstants.USER_SESSION];
                 model.CreateBy = session.UserName;
                 new ContentDao().Create(model);
-                return RedirectToAction("Index");
+                SetAlert("Đã thêm một tin tức mới ", "success");
+                return RedirectToAction("Index" ,"Content");
             }
             SetViewBag();
             return View();

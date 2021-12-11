@@ -284,6 +284,7 @@
     <Content Include="Assets\admin\images\user\5.jpg" />
     <Content Include="Assets\admin\js\bootstrap.min.js" />
     <Content Include="Assets\admin\js\AlertBox.js" />
+    <Content Include="Assets\admin\js\controller\productController.js" />
     <Content Include="Assets\admin\js\controller\userController.js" />
     <Content Include="Assets\admin\js\jquery.min.js" />
     <Content Include="Assets\admin\js\login.js" />

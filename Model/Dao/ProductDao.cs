@@ -103,6 +103,11 @@ namespace Model.Dao
             db.SaveChanges();
             return model;
         }
+        public Product ViewDetail(int id)
+        {
+            return db.Products.Find(id);
+        }
+
         public long Insert(Product entity)
         {
             db.Products.Add(entity);
@@ -157,10 +162,7 @@ namespace Model.Dao
 
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
-        public Product ViewDetail(int id)
-        {
-            return db.Products.Find(id);
-        }
+       
         public bool Delete(int id)
         {
             try

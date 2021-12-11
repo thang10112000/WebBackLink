@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
+
 
 namespace WebAffiliateMarketing.Areas.Admin.Controllers
 {
@@ -22,6 +25,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         [HttpGet] // phần tải trang giao diện
         public ActionResult Create()
         {
+            SetViewBag();
             return View();
         }
         [HttpPost]
@@ -46,6 +50,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         }
         public ActionResult Edit(int id)
         {
+            SetViewBag();
             var product = new ProductDao().ViewDetail(id);
             return View(product);
         }
@@ -73,6 +78,58 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         {
             new ProductDao().Delete(id);
             return RedirectToAction("Index");
+        }
+        public JsonResult LoadImage(long id)
+        {
+            ProductDao dao = new ProductDao();
+            var product = dao.ViewDetail(id);
+            var images = product.MoreImages;
+            XElement xImages = XElement.Parse(images);
+            List<string> listImagesReturn = new List<string>();
+
+            foreach (XElement element in xImages.Elements())
+            {
+                listImagesReturn.Add(element.Value);
+            }
+            return Json(new
+            {
+                data = listImagesReturn
+            }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult SaveImages(long id, string images)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            var listImages = serializer.Deserialize<List<string>>(images);
+
+            System.Xml.Linq.XElement xElement = new XElement("Images");
+
+            foreach (var item in listImages)
+            {
+                var subStringItem = item.Substring(22);
+                xElement.Add(new XElement("Image", subStringItem));
+            }
+            ProductDao dao = new ProductDao();
+            try
+            {
+                dao.UpdateImages(id, xElement.ToString());
+                return Json(new
+                {
+                    status = true
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    status = false
+                });
+            }
+
+        }
+        public void SetViewBag(long? selectedId = null)
+        {
+            var dao = new ProductCategoryDao();
+            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedId);
         }
     }
 }

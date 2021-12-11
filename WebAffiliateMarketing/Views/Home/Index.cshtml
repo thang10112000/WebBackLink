@@ -295,59 +295,29 @@
             <h2 class="ps-section__title" data-mask="Tin mới">Tin tức</h2>
             <div class="ps-section__action"><a class="ps-morelink text-uppercase" href="/tin-tuc">Xem tất cả bài đăng<i class="fa fa-long-arrow-right"></i></a></div>
         </div>
-        <div class="ps-section__content">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+
+        <div class="ps-blog-grid pt-80 pb-80">
+            <div class="ps-container">
+                <div class="row">
                     @foreach (var item in listContents)
                     {
 
                         var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
-                        <div class="ps-post">
-                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4" src="@item.Image" alt=""></div>
-                            <div class="ps-post__content">
-                                <a class="ps-post__title" href="@link">@item.Name</a>
-                                <p class="ps-post__meta"><span>By:<a class="mr-5" href="#">@item.CreateBy</a></span> -<span class="ml-5">@item.CreateDate</span></p>
-                                <p>@item.Description</p><a class="ps-morelink" href="@link">Đọc thêm<i class="fa fa-long-arrow-right"></i></a>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                            <div class="ps-post mb-30">
+                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4" src="@item.Image" alt=""></div>
+                                <div class="ps-post__content">
+                                    <a class="ps-post__title" href="@link">@item.Name</a>
+                                    <p class="ps-post__meta"><span>By:<a class="mr-5" href="#">@item.CreateBy</a></span>-<span class="ml-5">@item.CreateDate</span></p>
+                                    <p>@item.Description</p><a class="ps-morelink" href="@link">Đọc thêm<i class="fa fa-long-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     }
-                    </div>
-              
-            
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-@section slide{
-    <div class="ps-home-contact">
-        <div id="contact-map" data-address="New York, NY" data-title="BAKERY LOCATION!" data-zoom="17"></div>
-        <div class="ps-home-contact__form">
-            <header>
-                <h3>Liên hệ</h3>
-                <p>Bạn có gì thắc mắc không, vui lòng liên hệ với chúng tôi.</p>
-            </header>
-
-            <footer>
-                <form>
-                    <div class="form-group">
-                        <label>Tên<span>*</span></label>
-                        <input id="txtName" placeholder="" class="form-control" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Email<span>*</span></label>
-                        <input id="txtEmail" placeholder="" class="form-control" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Lời nhắn của bạn<span>*</span></label>
-                        <textarea id="txtContent" placeholder="" class="form-control" rows="4"></textarea>
-                    </div>
-                    <div class="form-group text-center">
-                        <button id="btnSend" class="ps-btn">Gửi tin nhắn<i class="fa fa-angle-right"></i></button>
-                    </div>
-                </form>
-            </footer>
-
-        </div>
-    </div>}
 
