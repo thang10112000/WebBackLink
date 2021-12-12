@@ -1,19 +1,17 @@
-﻿@model List<Model.EF.Product>
+﻿@model IEnumerable<Model.EF.Product>
 @{
     var category = (Model.EF.ProductCategory)ViewBag.Category;
-    ViewBag.Title = category.Name;
-    ViewBag.Keywords = category.MetaKeywords;
-    ViewBag.Descriptions = category.MetaDescriptions;
+   
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
 
 <div class="ps-products-wrap pt-80 pb-80">
     <div class="ps-products" data-mh="product-listing">
         <div class="ps-product-action">
             <div class="ps-product__filter">
-                <h3 class="ps-section__title" data-mask="features">@category.Name</h3>
+                <h3 class="ps-section__title" data-mask="Sản phẩm">Tất cả sản phẩm</h3>
             </div>
 
         </div>
@@ -102,7 +100,7 @@
             </div> }
         else
         {
-            <h6>Đã là trang cuối</h6>}
+            <h4>Đã là trang cuối</h4>}
 
     </div>
     <div class="ps-sidebar" data-mh="product-listing">
@@ -111,6 +109,7 @@
         </aside>
     </div>
 </div>
+
 
 
 

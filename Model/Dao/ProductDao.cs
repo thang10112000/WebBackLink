@@ -24,14 +24,15 @@ namespace Model.Dao
         {
             return db.Products.Where(x => x.Name.Contains(keyword)).Select(x => x.Name).ToList();
         }
-        public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize)
+
+        public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize) // phương thức lấy ra các bảng ghi 
         {
             IQueryable<Product> model = db.Products;
             if (!string.IsNullOrEmpty(searchString))
             {
                 model = model.Where(x => x.Name.Contains(searchString) || x.Name.Contains(searchString));
-            }
 
+            }
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
         /// <summary>
@@ -110,9 +111,11 @@ namespace Model.Dao
 
         public long Insert(Product entity)
         {
+            string image = "<image></image>";
             db.Products.Add(entity);
             entity.CreateDate = DateTime.Now;
             entity.ViewCount = 0;
+            entity.MoreImages = image;
             db.SaveChanges();
             return entity.ID;
         }

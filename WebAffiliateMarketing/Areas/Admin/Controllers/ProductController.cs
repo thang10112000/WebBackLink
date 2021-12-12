@@ -46,12 +46,14 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm Sản Phẩm Không Thành Công");
                 }
             }
+            SetViewBag();
             return View("Index");
         }
         public ActionResult Edit(int id)
         {
-            SetViewBag();
+        
             var product = new ProductDao().ViewDetail(id);
+            SetViewBag(product.CategoryID);
             return View(product);
         }
         [HttpPost]
@@ -72,6 +74,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật Sản Phẩm Không thành công");
                 }
             }
+            SetViewBag(product.CategoryID);
             return View("Index");
         }
         public ActionResult Delete(int id)
@@ -79,7 +82,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             new ProductDao().Delete(id);
             return RedirectToAction("Index");
         }
-        public JsonResult LoadImage(long id)
+        public JsonResult LoadImages(long id)
         {
             ProductDao dao = new ProductDao();
             var product = dao.ViewDetail(id);

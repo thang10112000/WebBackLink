@@ -1,4 +1,4 @@
-﻿@model Model.EF.Contact
+﻿
 
 @{
     //ViewBag.Title = "Trang chủ";
@@ -7,6 +7,7 @@
     var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
     var listFeatureProducts = (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
     var listContents = (List<Model.EF.Content>)ViewBag.NewContents;
+    var loadImage = ViewBag.loadImage;
 }
 
 @section jsFooter{
@@ -65,7 +66,10 @@
                 <div class="ps-masonry">
                     @foreach (var item in listNewProducts)
                     {
+                      
+                    
                         var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+
                         <div class="grid-sizer"></div>
 
                         <div class="grid-item kids">
@@ -85,15 +89,14 @@
                                         </div>
                                         <div class="ps-shoe__content">
                                             @*<div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>*@
+                                                <div class="ps-shoe__variant normal">
+                                                 
+                                                    
+                                                        <img src="@img" alt="">
+                                                    
+                                                </div>
+
+                                            </div>*@
                                             <div class="ps-shoe__detail">
                                                 <a class="ps-shoe__name" href="@url">@item.Name</a>
                                                 <br />

@@ -28,6 +28,12 @@ namespace WebAffiliateMarketing
           namespaces: new[] { "WebAffiliateMarketing.Controllers" }
       );
             routes.MapRoute(
+         name: "Product",
+         url: "san-pham",
+         defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional },
+         namespaces: new[] { "WebAffiliateMarketing.Controllers" }
+     );
+            routes.MapRoute(
           name: "Tags",
           url: "tag/{tagId}",
           defaults: new { controller = "Content", action = "Tag", id = UrlParameter.Optional },

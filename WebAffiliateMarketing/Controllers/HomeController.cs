@@ -19,7 +19,7 @@ namespace WebAffiliateMarketing.Controllers
             ViewBag.Slides = new SlideDao().ListAll();
             var productDao = new ProductDao();
             ViewBag.NewProducts = productDao.ListNewProduct(4);
-            ViewBag.NewContents = new ContentDao().ListNewContent(3);
+            ViewBag.NewContents = new ContentDao().ListNewContent(3); // hiển thị sản phẩm mới
             ViewBag.ListFeatureProducts = productDao.ListFeatureProduct(4);
 
             //set seo title
