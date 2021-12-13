@@ -104,6 +104,7 @@ namespace WebAffiliateMarketing.Controllers
         [OutputCache(CacheProfile = "Cache1DayForProduct")]
         public ActionResult Detail(long id)
         {
+           
             var product = new ProductDao().ViewDetail(id);
           
             var images = product.MoreImages;

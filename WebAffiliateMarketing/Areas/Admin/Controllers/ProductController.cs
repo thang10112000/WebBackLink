@@ -14,6 +14,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
     public class ProductController : BaseController
     {
         // GET: Admin/Product
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             var dao = new ProductDao();
@@ -22,13 +23,16 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             ViewBag.SearchString = searchString;
             return View(model);
         }
+        
         [HttpGet] // phần tải trang giao diện
+        [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
             SetViewBag();
             return View();
         }
         [HttpPost]
+        [HasCredential(RoleID = "ADD_USER")]
         [ValidateInput(false)]
         public ActionResult Create(Product product)
         {
@@ -49,6 +53,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             SetViewBag();
             return View("Index");
         }
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id)
         {
         
@@ -57,6 +62,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             return View(product);
         }
         [HttpPost]
+        [HasCredential(RoleID = "EDIT_USER")]
         [ValidateInput(false)]
         public ActionResult Edit(Product product)
         {
@@ -77,6 +83,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             SetViewBag(product.CategoryID);
             return View("Index");
         }
+        [HasCredential(RoleID = "DELETE_USER")]
         public ActionResult Delete(int id)
         {
             new ProductDao().Delete(id);
