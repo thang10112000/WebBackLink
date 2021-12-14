@@ -24,6 +24,13 @@ namespace Model.Dao
         {
             return db.Products.Where(x => x.Name.Contains(keyword)).Select(x => x.Name).ToList();
         }
+        public bool ChangeStatus(long id)
+        {
+            var product = db.Products.Find(id);
+            product.Status = !product.Status;
+            db.SaveChanges();
+            return product.Status;
+        }
 
         public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize) // phương thức lấy ra các bảng ghi 
         {

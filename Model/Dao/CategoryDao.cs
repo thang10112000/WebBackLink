@@ -22,13 +22,61 @@ namespace Model.Dao
             db.SaveChanges();
             return category.ID;
         }
+        public bool ChangeStatus(long id)
+        {
+            var category = db.Categories.Find(id);
+            category.Status = !category.Status;
+            db.SaveChanges();
+            return category.Status;
+        }
         public List<Category> ListAll()
         {
             return db.Categories.Where(x => x.Status == true).ToList();
         }
-        public ProductCategory ViewDetail(long id)
+        public bool Update(Category entity)
         {
-            return db.ProductCategories.Find(id);
+            try
+            {
+                var category = db.Categories.Find(entity.ID);
+                category.Name = entity.Name;
+                category.MetaTitle = entity.MetaTitle;
+                category.ParentID = entity.ParentID;
+                category.DisplayOrder = entity.DisplayOrder;
+                category.SeoTitle = entity.SeoTitle;
+                category.ModifiedBy = entity.ModifiedBy;
+                category.ModifiedDate = DateTime.Now;
+                category.MetaDescriptions = entity.MetaDescriptions;
+                category.MetaKeywords = entity.MetaKeywords;
+                category.Status = entity.Status;
+               
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+    
+        public bool Delete(int id)
+        {
+            try
+            {
+                var category = db.Categories.Find(id);
+                db.Categories.Remove(category);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+        public Category ViewDetail(long id)
+        {
+            return db.Categories.Find(id);
         }
         public IEnumerable<Category> ListAllPaging(string searchString, int page, int pageSize)
         {

@@ -293,6 +293,9 @@
     <Content Include="Assets\admin\images\user\5.jpg" />
     <Content Include="Assets\admin\js\bootstrap.min.js" />
     <Content Include="Assets\admin\js\AlertBox.js" />
+    <Content Include="Assets\admin\js\controller\aboutController.js" />
+    <Content Include="Assets\admin\js\controller\categoryController.js" />
+    <Content Include="Assets\admin\js\controller\contentController.js" />
     <Content Include="Assets\admin\js\controller\productController.js" />
     <Content Include="Assets\admin\js\controller\userController.js" />
     <Content Include="Assets\admin\js\jquery.min.js" />
@@ -1780,6 +1783,7 @@
     <Content Include="Assets\client\images\offer\home-3-3.jpg" />
     <Content Include="Assets\client\images\offer\img.jpg" />
     <Content Include="Assets\client\images\offer\sidebar.jpg" />
+    <Content Include="Assets\client\images\partner.jpg" />
     <Content Include="Assets\client\images\partner\1.png" />
     <Content Include="Assets\client\images\partner\2.png" />
     <Content Include="Assets\client\images\partner\3.png" />
@@ -2526,7 +2530,6 @@
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Assets\admin\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\admin\js\plugins2\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
@@ -3121,6 +3124,9 @@
     <Content Include="Areas\Admin\Views\About\Index.cshtml" />
     <Content Include="Areas\Admin\Views\About\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\About\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

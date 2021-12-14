@@ -20,6 +20,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             return View(model);
         }
         [HttpGet]
+        [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
             SetViewBag();
@@ -79,6 +80,16 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         {
             new ContentDao().Delete(id);
             return RedirectToAction("Index");
+        }
+        [HttpPost]
+        [HasCredential(RoleID = "EDIT_USER")]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new ContentDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
         }
     }
 }

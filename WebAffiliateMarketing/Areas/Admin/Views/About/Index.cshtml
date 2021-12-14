@@ -6,6 +6,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+@section jsFooter{
+    <script src="/Assets/admin/js/controller/aboutController.js"></script>
+}
 <div class="row">
 
     <div class="col-lg-12">
@@ -47,24 +50,24 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                            <tr id="row_@item.ID">
+                                <tr id="row_@item.ID">
 
-                                <td>@item.ID</td>
-                                <td>@item.Name</td>
-                                <td>@item.MetaTitle</td>
-                                <td>@item.Detail</td>
-                                <td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
-                                <td>
-                                    <a href="/Admin/About/Edit/@item.ID">Sửa</a>
-                                    |
-                                    @Ajax.ActionLink("Xoá", "Delete", new { @id = item.ID }, new AjaxOptions
-                               {
-                                   Confirm = "Bạn có muốn xoá bản ghi này?",
-                                   OnComplete = "$('#row_" + @item.ID + "').remove()",
-                                   HttpMethod = "Delete"
-                               })
-                                </td>
-                            </tr>
+                                    <td>@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.MetaTitle</td>
+                                    <td>@item.Detail</td>
+                                    <td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
+                                    <td>
+                                        <a href="/Admin/About/Edit/@item.ID">Sửa</a>
+                                        |
+                                        @Ajax.ActionLink("Xoá", "Delete", new { @id = item.ID }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xoá bản ghi này?",
+                                       OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+                                </tr>
                             }
 
 

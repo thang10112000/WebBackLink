@@ -1,14 +1,13 @@
-﻿@model PagedList.IPagedList<Model.EF.Content>
+﻿@model PagedList.IPagedList<Model.EF.Category>
 @using PagedList.Mvc;
+
 @{
-    ViewBag.Title = "Quản lý tin tức";
+    ViewBag.Title = "Loại";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@* khai báo model để lấy ds listPage   *@
-
 @section jsFooter{
-    <script src="/Assets/admin/js/controller/contentController.js"></script>
-  }
+    <script src="/Assets/admin/js/controller/categoryController.js"></script>
+}
 <div class="row">
 
     <div class="col-lg-12">
@@ -20,7 +19,7 @@
 
             <!-- /.panel-heading -->
             <div class="panel-body">
-                @using (Html.BeginForm("Index", "Content", FormMethod.Get))
+                @using (Html.BeginForm("Index", "Category", FormMethod.Get))
                 {
                     <div class="row form-group">
                         <div class="col-lg-12">
@@ -29,7 +28,7 @@
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-success">Tìm kiếm</button>
-                                <a class="btn btn-primary" href="/Admin/Content/Create">Thêm mới</a>
+                                <a class="btn btn-primary" href="/Admin/Category/Create">Thêm mới</a>
                             </div>
                         </div>
                     </div>}
@@ -38,10 +37,11 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-
-                                <th>Tiêu đề</th>
-                                <th>Hình ảnh</th>
-                                <th>Ngày đăng</th>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>ParentID</th>
+                                <th>DisplayOrder</th>
+                                <th>SeoTittle</th>
                                 <th>Trạng thái</th>
                                 <th>#</th>
                             </tr>
@@ -51,12 +51,15 @@
                             {
                                 <tr id="row_@item.ID">
 
+                                    <td>@item.ID</td>
                                     <td>@item.Name</td>
-                                    <td><img src="@item.Image" style="width:100px;" /></td>
-                                    <td>@item.CreateDate</td>
+                                    <td>@item.ParentID</td>
+                                    <td>@item.DisplayOrder</td>
+                                    <td>@item.SeoTitle</td>
+
                                     <td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>
                                     <td>
-                                        <a href="/Admin/Content/Edit/@item.ID">Sửa</a>
+                                        <a href="/Admin/Category/Edit/@item.ID">Sửa</a>
                                         |
                                         @Ajax.ActionLink("Xoá", "Delete", new { @id = item.ID }, new AjaxOptions
                                    {

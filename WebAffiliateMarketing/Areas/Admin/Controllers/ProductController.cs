@@ -136,6 +136,16 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             }
 
         }
+        [HttpPost]
+        [HasCredential(RoleID = "EDIT_USER")]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new ProductDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
         public void SetViewBag(long? selectedId = null)
         {
             var dao = new ProductCategoryDao();

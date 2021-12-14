@@ -20,6 +20,14 @@ namespace Model.Dao
         {
             return db.Abouts.Where(x => x.Status == true).ToList();
         }
+        public bool ChangeStatus(long id)
+        {
+            var about = db.Abouts.Find(id);
+            about.Status = !about.Status;
+            db.SaveChanges();
+            return about.Status;
+        }
+
 
         public About GetByID(long id)
         {

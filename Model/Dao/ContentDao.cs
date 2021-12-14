@@ -18,9 +18,20 @@ namespace Model.Dao
             db = new ClickShopDbContext();
 
         }
+        public List<Content> ListAll()
+        {
+            return db.Contents.Where(x => x.Status == true).ToList();
+        }
         public Content GetByID(long id)
         {
             return db.Contents.Find(id);
+        }
+        public bool ChangeStatus(long id)
+        {
+            var content = db.Contents.Find(id);
+            content.Status = !content.Status;
+            db.SaveChanges();
+            return content.Status;
         }
         public bool CheckTag(string id)
         {
