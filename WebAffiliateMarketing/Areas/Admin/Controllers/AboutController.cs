@@ -20,10 +20,9 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             return View(model);
         }
         [HttpGet]
-        [HasCredential(RoleID = "VIEW_USER")]
+        [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
-
             return View();
         }
 
@@ -43,7 +42,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm Sản Phẩm Không Thành Công");
+                    ModelState.AddModelError("", "Thêm Không Thành Công");
                 }
             }
             return View("Index");
@@ -51,9 +50,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id)
         {
-
             var about = new AboutDao().ViewDetail(id);
-          
             return View(about);
         }
         [HttpPost]
@@ -72,7 +69,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật Sản Phẩm Không thành công");
+                    ModelState.AddModelError("", "Cập nhập Không thành công");
                 }
             }
           

@@ -5,17 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebAffiliateMarketing.Common;
 
 namespace WebAffiliateMarketing.Areas.Admin.Controllers
 {
-    public class ContentController : BaseController
+    public class ProductCategoryController : BaseController
     {
-        // GET: Admin/Content
+        // GET: Admin/ProductCategory
         [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
-            var dao = new ContentDao();
+            var dao = new ProductCategoryDao();
             var model = dao.ListAllPaging(searchString, page, pageSize);
             ViewBag.SearchString = searchString;
             return View(model);
@@ -24,74 +23,71 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
-            SetViewBag();
             return View();
         }
-
         [HttpPost]
         [HasCredential(RoleID = "ADD_USER")]
         [ValidateInput(false)]
-        public ActionResult Create(Content model)
+        public ActionResult Create(ProductCategory productcategory)
         {
             if (ModelState.IsValid)
             {
-                var session = (UserLogin)Session[CommonConstants.USER_SESSION];
-                model.CreateBy = session.UserName;
-                new ContentDao().Create(model);
-                SetAlert("Đã thêm một tin tức mới ", "success");
-                return RedirectToAction("Index" ,"Content");
-            }
-            SetViewBag();
-            return View();
-        }
-        [HttpGet]
-        [HasCredential(RoleID = "EDIT_USER")]
-        public ActionResult Edit(long id)
-        {
-            var dao = new ContentDao();
-            var content = dao.GetByID(id);
-            SetViewBag(content.CategoryID );
-            return View(content);
-        }
-        [HttpPost]
-        [ValidateInput(false)]
-        [HasCredential(RoleID = "EDIT_USER")]
-        public ActionResult Edit(Content model)
-        {
-            if (ModelState.IsValid)
-            {
-                var dao = new ContentDao();
-                var result = dao.Update(model);
-                if (result)
+                var dao = new ProductCategoryDao();
+                long id = dao.Insert(productcategory);
+                if (id > 0)
                 {
-                    SetAlert("Sửa Thành Công ", "success");
-                    return RedirectToAction("Index", "Content");
+                    SetAlert("Thêm Thành Công ", "success");
+                    return RedirectToAction("Index", "ProductCategory");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật Không thành công");
+                    ModelState.AddModelError("", "Thêm Không Thành Công");
                 }
             }
-            SetViewBag(model.CategoryID);
             return View("Index");
         }
         [HasCredential(RoleID = "EDIT_USER")]
-        public void SetViewBag(long? selectedId = null)
+        public ActionResult Edit(int id)
         {
-            var dao = new CategoryDao();
-            ViewBag.CategoryID = new SelectList(dao.ListAll(), "ID", "Name", selectedId);
+
+            var productcategory = new ProductCategoryDao().ViewDetail(id);
+
+            return View(productcategory);
+        }
+        [HttpPost]
+        [HasCredential(RoleID = "EDIT_USER")]
+        [ValidateInput(false)]
+        public ActionResult Edit(ProductCategory productcategory)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new ProductCategoryDao();
+                var result = dao.Update(productcategory);
+                if (result)
+                {
+                    SetAlert("Sửa Thành Công ", "success");
+                    return RedirectToAction("Index", "ProductCategory");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhập Không thành công");
+                }
+            }
+
+            return View("Index");
         }
         [HasCredential(RoleID = "DELETE_USER")]
         public ActionResult Delete(int id)
         {
-            new ContentDao().Delete(id);
+            new ProductCategoryDao().Delete(id);
             return RedirectToAction("Index");
         }
+
         [HttpPost]
         [HasCredential(RoleID = "EDIT_USER")]
         public JsonResult ChangeStatus(long id)
         {
-            var result = new ContentDao().ChangeStatus(id);
+            var result = new ProductCategoryDao().ChangeStatus(id);
             return Json(new
             {
                 status = result

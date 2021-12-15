@@ -20,7 +20,7 @@ namespace WebAffiliateMarketing
                defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                namespaces: new[] { "WebAffiliateMarketing.Controllers" }
            );
-
+          
             routes.MapRoute(
           name: "Product Detail",
           url: "chi-tiet/{metatitle}-{id}",

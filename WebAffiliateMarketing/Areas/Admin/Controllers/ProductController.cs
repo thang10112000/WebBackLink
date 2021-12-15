@@ -106,6 +106,8 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 data = listImagesReturn
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HasCredential(RoleID = "EDIT_USER")]
         public JsonResult SaveImages(long id, string images)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
@@ -146,6 +148,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                 status = result
             });
         }
+        [HasCredential(RoleID = "EDIT_USER")]
         public void SetViewBag(long? selectedId = null)
         {
             var dao = new ProductCategoryDao();
