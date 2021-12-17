@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -10,9 +10,11 @@ namespace Model.EF
     public partial class UserGroup
     {
         [StringLength(20)]
+        [Display(Name = "Loại tài khoản")]
         public string ID { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Loại")]
         public string Name { get; set; }
     }
 }

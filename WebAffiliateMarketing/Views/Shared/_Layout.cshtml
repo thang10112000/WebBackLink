@@ -8,13 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index, follow">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="~/Assets/client/images/logoclickshop.png" rel="apple-touch-icon">
     <link href="~/Assets/client/images/logoclickshop.png" rel="icon">
-
+    <meta property="fb:1024793591616473" content="&#123;1024793591616473&#125;" />
+    <meta property="fb:admins" content="&#123;455595068844251&#125;" />
     <meta name="keywords" content="Default Description">
     <meta name="description" content="Default keyword">
-   
+
     <title>@ViewBag.Title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="@ViewBag.Keywords" name="keywords">
@@ -44,6 +46,7 @@
     <!--WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61b2b4f89f380885"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=327916678923688&autoLogAppEvents=1" nonce="uAqtrVms"></script>
 </head>
 <!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
 <!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
@@ -51,18 +54,19 @@
 
 <body class="ps-loading">
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=969741493638776&autoLogAppEvents=1" nonce="eo42BPz9"></script>
+    <div id="fb-root"></div>
+  
     <div class="header--sidebar"></div>
     <header class="header">
         <dxiv class="header__top">
             @{ Html.RenderAction("TopMenu", "Home");}
         </dxiv>
-    
+
         <nav class="navigation">
             <div class="container-fluid">
                 <center>
                     <div class="navigation__column left">
-                        <div class="header__logo"><a class="ps-logo" href="/" ref="nofollow"><img src="~/Assets/admin/images/clickshoplogo1.png" alt=""></a></div>
+                        <div class="header__logo"><a class="ps-logo" href="/" ref="nofollow"><img src="~/Assets/admin/images/logoclickshopngang.png" alt=""></a></div>
                     </div>
                 </center>
                 @{Html.RenderAction("MainMenu", "Home"); }
@@ -122,7 +126,7 @@
     <script type="text/javascript" src="/Assets/client/plugins/elevatezoom/jquery.elevatezoom.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script>
+   
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>

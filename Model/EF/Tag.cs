@@ -10,6 +10,7 @@ namespace Model.EF
     public partial class Tag
     {
         [StringLength(50)]
+
         public string ID { get; set; }
 
         [StringLength(50)]

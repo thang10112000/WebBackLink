@@ -5580,7 +5580,7 @@ textarea.form-control {
 
 .ps-product--detail .ps-product__content .tab-list {
   margin-bottom: 20px;
-  text-align: center;
+ /* text-align: center;*/
   border-bottom: 1px solid #e5e5e5; }
   .ps-product--detail .ps-product__content .tab-list li {
     display: inline-block;
@@ -5589,7 +5589,7 @@ textarea.form-control {
       position: relative;
       display: inline-block;
       font-family: "Archivo Narrow", sans-serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.6em;
       color: #626262;

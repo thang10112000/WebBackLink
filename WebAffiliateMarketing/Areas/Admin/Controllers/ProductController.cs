@@ -129,7 +129,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     status = true
                 });
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return Json(new
                 {
