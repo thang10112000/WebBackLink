@@ -23,6 +23,7 @@ namespace Model.Dao
         public long Insert(Slide entity)
         {
             db.Slides.Add(entity);
+            entity.CreateDate = DateTime.Now;
             db.SaveChanges();
             return entity.ID;
         }
@@ -32,6 +33,8 @@ namespace Model.Dao
             {
                 var slide = db.Slides.Find(entity.ID);
                 slide.Image = entity.Image;
+                slide.Name = entity.Name;
+                slide.Detail = entity.Detail;
                 slide.DisplayOrder = entity.DisplayOrder;
                 slide.Link = entity.Link;
                 slide.ModifiedBy = entity.ModifiedBy;

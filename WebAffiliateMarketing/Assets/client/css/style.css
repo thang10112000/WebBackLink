@@ -2550,7 +2550,7 @@ textarea.form-control {
     z-index: 10000; }
   .ps-shoe:hover .ps-shoe__content {
     padding-top: 100px;
-    bottom: -90px;
+    bottom: -20px;
     max-height: none; }
   .ps-shoe:hover .ps-shoe__variants {
     visibility: visible;

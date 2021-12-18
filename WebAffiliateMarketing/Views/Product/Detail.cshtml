@@ -48,12 +48,12 @@
                     </div>
                 </div>
                 <div class="ps-product__thumbnail--mobile">
-                    @*<div class="ps-product__main-img">
+                    <div class="ps-product__main-img">
                         @foreach (var item in loadImage)
                         {
                             <img src="@item" alt="">
                         }
-                    </div>*@
+                    </div>
                     <div class="ps-product__preview owl-slider " data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
                         @foreach (var item in loadImage)
                         {
@@ -108,7 +108,7 @@
                         <li><a role="tab" data-toggle="tab">Bình luận</a></li>
                     </ul>
                 </div>
-                <div class="fb-comments" data-href="https://localhost:44396/" data-width="" data-numposts="5"></div>
+                <div class="fb-comments" data-href="https://localhost:44396/" data-width="1000" data-numposts="5"></div>
             </div>
         </div>
     </div>
@@ -134,12 +134,13 @@
                     <div class="ps-shoes--carousel">
                         <div class="ps-shoe">
                             <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>Hot</span></div><a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
+                                <div class="ps-badge"><span>Hot</span></div> <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
                                     <i class="ps-icon-heart"></i>
-                                </a><img src="@item.Image" alt="@item.Name"><a class="ps-shoe__overlay" href="@url"></a>
+                                </a><img class="sizeimg" src="@item.Image" alt=""><a class="ps-shoe__overlay" href="@url"></a>
+
                             </div>
-                            <div class="ps-shoe__content">
-                                @*<div class="ps-shoe__variants">
+                                <div class="ps-shoe__content">
+                                    @*<div class="ps-shoe__variants">
                                         <div class="ps-shoe__variant normal">
                                             @foreach (var img in loadImage)
                                             {
@@ -148,19 +149,19 @@
                                         </div>
 
                                     </div>*@
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="@url">@item.Name</a>
-                                    <p class="ps-shoe__categories"><a href="@url">Xem sản phẩm</a></p>
-                                    <span class="ps-shoe__price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span>
+                                    <div class="ps-shoe__detail">
+                                        <a class="ps-shoe__name" href="@url">@item.Name</a>
+                                        <p class="ps-shoe__categories"><a href="@url">Xem sản phẩm</a></p>
+                                        <span class="ps-shoe__price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                                 </div>
                             </div>
                         </div>
                     </div>
-                }
-            </div>
-        </div>
-    </div>
-</div>
 
 
 

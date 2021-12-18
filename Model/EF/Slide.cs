@@ -10,10 +10,19 @@
     public partial class Slide
     {
         public int ID { get; set; }
+        [StringLength(250)]
+        [Display(Name = "Tiêu đề")]
+
+        public string Name { get; set; }
+        [StringLength(350)]
+        [Display(Name = "Chi tiết")]
+        public string Detail { get; set; }
 
         [StringLength(250)]
         [Display(Name = "Thêm ảnh")]
+
         public string Image { get; set; }
+
 
         [Display(Name = "Thứ tự hiển thị")]
         public int? DisplayOrder { get; set; }
