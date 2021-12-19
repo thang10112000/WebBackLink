@@ -42,25 +42,36 @@
                     <div class="ps-product__image">
                         @foreach (var item in loadImage)
                         {
-                            <div class="item"><img class="zoom" src="@item" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
+                            <div class="item"><img class="zoom" src="@item" alt="" data-zoom-image="@item"></div>
 
                         }
                     </div>
                 </div>
-                <div class="ps-product__thumbnail--mobile">
-                    <div class="ps-product__main-img">
-                        @foreach (var item in loadImage)
-                        {
-                            <img src="@item" alt="">
-                        }
+                <center>
+                    <div class="ps-product__thumbnail--mobile">
+
+                        <div class="ps-product__image">
+                            @foreach (var item in loadImage)
+                            {
+
+                                <div class="item"><img class="zoom" src="@item" alt="" data-zoom-image="@item"></div>
+
+                            }
+                        </div>
+
+
+                        <div class="ps-product__preview">
+                            <div class="ps-product__variants">
+                                @foreach (var item in loadImage)
+                                {
+
+                                    <div class="item"><img src="@item" alt=""></div>
+                                }
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="ps-product__preview owl-slider " data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
-                        @foreach (var item in loadImage)
-                        {
-                            <img src="@item" alt="">
-                        }
-                    </div>
-                </div>
+                </center>
                 <div class="ps-product__info">
                     <div class="ps-product__rating">
                         <select class="ps-rating">
@@ -108,7 +119,7 @@
                         <li><a role="tab" data-toggle="tab">Bình luận</a></li>
                     </ul>
                 </div>
-                <div class="fb-comments" data-href="https://localhost:44396/" data-width="1000" data-numposts="5"></div>
+                <div class="fb-comments" data-href="https://localhost:44396/" data-width="" data-numposts="5"></div>
             </div>
         </div>
     </div>
@@ -140,15 +151,7 @@
 
                             </div>
                                 <div class="ps-shoe__content">
-                                    @*<div class="ps-shoe__variants">
-                                        <div class="ps-shoe__variant normal">
-                                            @foreach (var img in loadImage)
-                                            {
-                                                <img src="@img" alt="@item.Name">
-                                            }
-                                        </div>
-
-                                    </div>*@
+                                 
                                     <div class="ps-shoe__detail">
                                         <a class="ps-shoe__name" href="@url">@item.Name</a>
                                         <p class="ps-shoe__categories"><a href="@url">Xem sản phẩm</a></p>
