@@ -42,7 +42,7 @@
     
 
 </div>
-<div class="ps-section--features-product  ps-section @*masonry-root*@ pt-100 pb-100">
+<div class="ps-section--features-product  ps-section pt-100 pb-100">
     <div class="ps-container">
         <div class="ps-section__header mb-50">
 
@@ -63,8 +63,9 @@
                             <div class="grid-item__content-wrapper">
                                 <div class="ps-shoe mb-30">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>Hot</span></div>
-                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"></div>
+                                        <div class="ps-badge ps-badge--sale "><span>Hot</span></div>
+                                       
+
                                         <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
                                             <i class="ps-icon-heart"></i>
                                         </a><img class="sizeimg" src="@item.Image" alt="@item.Name">
@@ -166,12 +167,11 @@
                         <div class="ps-shoe">
 
                             <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge">
-                                    <span>New</span>
-                                </div><a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
+                                <div class="ps-badge"><span>New</span></div>
+                                <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
                                     <i class="ps-icon-heart"></i>
                                 </a>
-                                <img class="sizeimg" src="@item.Image" alt="@item.Name">
+                                <img src="@item.Image" alt="@item.Name">
                                 <a class="ps-shoe__overlay" href="@url"></a>
                             </div>
 
@@ -263,11 +263,10 @@
                 <div class="row">
                     @foreach (var item in listContents)
                     {
-
                         var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                             <div class="ps-post mb-30">
-                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4" src="@item.Image" alt=""></div>
+                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4"  src="@item.Image" alt=""></div>
                                 <div class="ps-post__content">
                                     <a class="ps-post__title" href="@link">@item.Name</a>
                                     <p class="ps-post__meta"><span>By:<a class="mr-5" href="#">@item.CreateBy</a></span>-<span class="ml-5">@item.CreateDate</span></p>

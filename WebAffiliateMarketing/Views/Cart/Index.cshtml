@@ -31,9 +31,9 @@
 
                             var url = "/chi-tiet/" + item.Product.MetaTitle + "-" + item.Product.ID;
                             <tr>
-                                <td><a class="ps-product__preview" href="@url"><img class="sizeimg1" src="@item.Product.Image" alt=""> @item.Product.Name </a></td>
+                                <td><a class="ps-product__preview" href="@url"><img class="sizeimg1" src="@item.Product.Image" alt=""> &nbsp;  @item.Product.Name </a></td>
 
-                                <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                                <td><p>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</p></td>
 
                                 <td>
                                     <div class="ps-remove" data-id="@item.Product.ID"></div>

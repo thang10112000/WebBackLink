@@ -1,5 +1,7 @@
 ﻿@model Model.EF.Content
 @{
+    var listall = (List<Model.EF.Tag>)ViewBag.TagAll;
+    var listContents = (List<Model.EF.Content>)ViewBag.NewContents;
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -38,21 +40,34 @@
              
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
- 
+                <aside class="ps-widget--sidebar">
+                    <div class="ps-widget__header">
+                        <h3>Tin mới</h3>
+                    </div>
+                    <div class="ps-widget__content">
+                        @foreach (var item in listContents)
+                        {
+                            var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
+                            <div class="ps-shoe--sidebar">
+                                <div class="ps-shoe__thumbnail"><a href="@link"></a><img src="@item.Image" alt="@item.Name" class="imgnewcontent"></div>
+                                <div class="ps-shoe__content">
+                                    <a class="ps-shoe__title" href="@link">@item.Name</a><br />
+                                    <span>@item.CreateDate</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </aside>
                 <aside class="ps-widget--sidebar">
                     <div class="ps-widget__header">
                         <h3>Tags</h3>
                     </div>
                     <div class="ps-widget__content">
                         <ul class="ps-tags">
-                            <li><a href="product-listing.html">Men</a></li>
-                            <li><a href="product-listing.html">Female</a></li>
-                            <li><a href="product-listing.html">B&G</a></li>
-                            <li><a href="product-listing.html">ugly fashion</a></li>
-                            <li><a href="product-listing.html">Nike</a></li>
-                            <li><a href="product-listing.html">Dior</a></li>
-                            <li><a href="product-listing.html">Adidas</a></li>
-                            <li><a href="product-listing.html">Diour</a></li>
+                            @foreach (var item in listall)
+                            {
+                                <li><a href="/tag/@item.ID">@item.Name</a></li>
+                            }
                         </ul>
                     </div>
                 </aside>

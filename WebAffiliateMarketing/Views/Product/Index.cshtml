@@ -20,30 +20,24 @@
             {
                 var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
                 <div class="ps-product__column">
-
                     <div class="ps-shoe mb-30">
                         <div class="ps-shoe__thumbnail">
-                            <div class="ps-badge"><span>New</span></div>
-                            <div class="ps-badge ps-badge--sale ps-badge--2nd"></div>
                             <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
-                                <i class="ps-icon-heart"></i>
-                            </a><img class="sizeimg" src="@item.Image" alt=""><a class="ps-shoe__overlay" href="@link"></a>
+                            <i class="ps-icon-heart"></i></a><img src="@item.Image" alt="@item.Name"><a class="ps-shoe__overlay" href="@link"></a>
                         </div>
                         <div class="ps-shoe__content">
-                         
                             <div class="ps-shoe__detail">
                                 <a class="ps-shoe__name" href="@link">@item.Name</a>
                                 <p class="ps-shoe__categories"><a href="@link"> Xem sản phẩm</a></p>
-                                <span class="ps-shoe__price">
-                                    @(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")
-                                </span>
+                                <span class="ps-shoe__price">  @(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             }
-        </div>
+
+            </div>
+
 
 
         <!--Phân trang-->

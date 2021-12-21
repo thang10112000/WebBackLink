@@ -18,13 +18,18 @@ namespace Model.Dao
             db = new ClickShopDbContext();
 
         }
+        
         public List<Content> ListAll()
         {
             return db.Contents.Where(x => x.Status == true).ToList();
         }
         public Content GetByID(long id)
         {
-            return db.Contents.Find(id);
+            var model = db.Contents.Find(id);
+            model.ViewCount++;
+            db.SaveChanges();
+            return model;
+          
         }
         public bool ChangeStatus(long id)
         {
@@ -42,6 +47,7 @@ namespace Model.Dao
             var contentTag = new ContentTag();
             contentTag.ContentID = contentId;
             contentTag.TagID = tagId;
+
             db.ContentTags.Add(contentTag);
             db.SaveChanges();
         }
@@ -121,6 +127,7 @@ namespace Model.Dao
             IQueryable<Content> model = db.Contents;
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
+     
         public long Create(Content content)
         {
             //Xử lý alias
@@ -263,6 +270,6 @@ namespace Model.Dao
         {
             return db.Contents.OrderByDescending(x => x.CreateDate).Take(top).ToList();
         }
-
+        
     }
 }

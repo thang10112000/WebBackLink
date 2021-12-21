@@ -13,11 +13,12 @@ namespace WebAffiliateMarketing.Controllers
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
             var model = new ContentDao().ListAllPaging(page, pageSize);
+            ViewBag.NewContents = new ContentDao().ListNewContent(3);
             int totalRecord = 0;
-
+            ViewBag.TagAll = new TagDao().ListTag();
             ViewBag.Total = totalRecord;
             ViewBag.Page = page;
-
+         
             int maxPage = 5;
             int totalPage = 0;
 
@@ -33,15 +34,17 @@ namespace WebAffiliateMarketing.Controllers
         public ActionResult Detail(long id)
         {
             var model = new ContentDao().GetByID(id);
-
+            ViewBag.TagAll = new TagDao().ListTag();
             ViewBag.Tags = new ContentDao().ListTag(id);
+            ViewBag.NewContents = new ContentDao().ListNewContent(3);
             return View(model);
         }
         public ActionResult Tag(string tagId, int page = 1, int pageSize = 10)
         {
             var model = new ContentDao().ListAllByTag(tagId, page, pageSize);
             int totalRecord = 0;
-
+            ViewBag.TagAll = new TagDao().ListTag();
+            ViewBag.NewContents = new ContentDao().ListNewContent(3);
             ViewBag.Total = totalRecord;
             ViewBag.Page = page;
 

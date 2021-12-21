@@ -93,7 +93,8 @@ namespace Model.Dao
 
         public List<Product> ListFeatureProduct(int top)
         {
-            return db.Products.Where(x => x.TopHot != null && x.TopHot > DateTime.Now).OrderByDescending(x => x.CreateDate).Take(top).ToList();
+            var maxValue = db.Products.Max(x => x.ViewCount);
+            return db.Products.Where(x => x.Status == true).OrderByDescending(x => x.ViewCount).Take(top).ToList();
         }
         public List<Product> ListRelatedProducts(long productId)
         {
@@ -111,10 +112,10 @@ namespace Model.Dao
             db.SaveChanges();
             return model;
         }
-        public Product ViewDetail(int id)
-        {
-            return db.Products.Find(id);
-        }
+        //public Product ViewDetail(int id)
+        //{
+        //    return db.Products.Find(id);
+        //}
 
         public long Insert(Product entity)
         {

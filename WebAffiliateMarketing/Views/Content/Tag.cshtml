@@ -1,23 +1,27 @@
 ﻿@model IEnumerable<Model.EF.Content>
 
 @{
-    ViewBag.Title = "Tag";
+    ViewBag.Title = "Tin tức";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var tag = (Model.EF.Tag)ViewBag.Tag;
+    var listContents = (List<Model.EF.Content>)ViewBag.NewContents;
+    var listall = (List<Model.EF.Tag>)ViewBag.TagAll;
 }
 <div class="ps-blog-grid pt-80 pb-80">
     <div class="ps-container">
         <div class="row">
+
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
-                <div class="ps-post--2">
-                    @foreach (var item in Model)
-                    {
-                        var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
-                        <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img src="@item.Image" class="sizeimg3" alt=""></div>
+                @foreach (var item in Model)
+                {
+                    var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
+                    <div class="ps-post--2">
+
+                        <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img src="@item.Image" class="sizeimg3" width="450" height="250" alt="@item.MetaKeywords"></div>
                         <div class="ps-post__container">
                             <header class="ps-post__header">
                                 <a class="ps-post__title" href="@link">@item.Name</a>
-                                <p>Posted by <a href="#">@item.CreateBy</a> on @item.CreateDate <a href="blog-grid.html">Men</a>  </p>
+                                <p>Posted by <a href="#">@item.CreateBy</a> on @item.CreateDate  </p>
                             </header>
                             <div class="ps-post__content">
                                 <p>@item.Description</p>
@@ -27,8 +31,10 @@
 
                             </footer>
                         </div>
-                    }
-                </div>
+
+                    </div>
+                }
+
 
 
                 <div class="mt-30">
@@ -43,7 +49,7 @@
                         var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
                         var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
 
-                        var link = "/tag/" + tag.ID;
+                        var link = "/tin-tuc";
                         <div class="ps-product-action">
                             <div class="ps-pagination">
                                 <ul class="pagination">
@@ -75,10 +81,30 @@
                                 </ul>
                             </div>
                         </div>}
-
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+
+
+
+                <aside class="ps-widget--sidebar">
+                    <div class="ps-widget__header">
+                        <h3>Tin mới</h3>
+                    </div>
+                    <div class="ps-widget__content">
+                        @foreach (var item in listContents)
+                        {
+                            var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
+                            <div class="ps-shoe--sidebar">
+                                <div class="ps-shoe__thumbnail"><a href="@link"></a><img src="@item.Image" alt="@item.Name" class="imgnewcontent"></div>
+                                <div class="ps-shoe__content">
+                                    <a class="ps-shoe__title" href="@link">@item.Name</a><br />
+                                    <span>@item.CreateDate</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </aside>
 
                 <aside class="ps-widget--sidebar">
                     <div class="ps-widget__header">
@@ -86,14 +112,10 @@
                     </div>
                     <div class="ps-widget__content">
                         <ul class="ps-tags">
-                            <li><a href="product-listing.html">Men</a></li>
-                            <li><a href="product-listing.html">Female</a></li>
-                            <li><a href="product-listing.html">B&G</a></li>
-                            <li><a href="product-listing.html">ugly fashion</a></li>
-                            <li><a href="product-listing.html">Nike</a></li>
-                            <li><a href="product-listing.html">Dior</a></li>
-                            <li><a href="product-listing.html">Adidas</a></li>
-                            <li><a href="product-listing.html">Diour</a></li>
+                            @foreach (var item in listall)
+                            {
+                                <li><a href="/tag/@item.ID">@item.Name</a></li>
+                            }
                         </ul>
                     </div>
                 </aside>

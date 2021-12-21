@@ -15,6 +15,7 @@ namespace Model.Dao
         {
             db = new ClickShopDbContext();
         }
+
         public List<Tag> ListTag()
         {
             return db.Tags.ToList();
