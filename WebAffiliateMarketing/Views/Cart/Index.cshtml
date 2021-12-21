@@ -2,7 +2,7 @@
 
 @{
   
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sản phẩm yêu thích";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,7 +31,7 @@
 
                             var url = "/chi-tiet/" + item.Product.MetaTitle + "-" + item.Product.ID;
                             <tr>
-                                <td><a class="ps-product__preview" href="@url"><img class="sizeimg1" src="@item.Product.Image" alt=""> &nbsp;  @item.Product.Name </a></td>
+                                <td><a class="ps-product__preview" href="@url"><img class="sizeimg1" src="@item.Product.Image" alt="@item.Name"> &nbsp;  @item.Product.Name </a></td>
 
                                 <td><p>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</p></td>
 

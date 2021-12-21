@@ -2,7 +2,9 @@
 @{
     var listall = (List<Model.EF.Tag>)ViewBag.TagAll;
     var listContents = (List<Model.EF.Content>)ViewBag.NewContents;
-    ViewBag.Title = "Detail";
+    ViewBag.Title = Model.Name;
+    ViewBag.Keywords = Model.MetaKeywords;
+    ViewBag.Descriptions = Model.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,7 +14,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
                 <div class="ps-post--detail">
-                    <div class="ps-post__thumbnail"><img src="images/blog/11.png" alt=""></div>
+                    <div class="ps-post__thumbnail"><img src="@Model.Image" class="imgdetail" alt="@Model.Name"></div>
                     <div class="ps-post__header">
                         <h3 class="ps-post__title">@Model.Name</h3>
                         <p class="ps-post__meta">By <a href="#">@Model.CreateBy</a> on @Model.CreateDate  </p>
