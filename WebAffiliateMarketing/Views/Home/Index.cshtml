@@ -17,29 +17,29 @@
 }
 
 <div class="ps-banner">
-  
-        <div class="rev_slider fullscreenbanner" id="home-banner">
-            <ul>
-                @foreach (var item in slides)
-                {
-                    <li class="ps-banner"  data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0">
-                        <img class="rev-slidebg" style="image-rendering: pixelated" src="@item.Image" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
-                        <div class="tp-caption ps-banner__header" id="layer-1" data-x="left" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-150','-120','-150','-170']" data-width="['none','none','none','400']" data-type="text" data-responsive_offset="on" data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <p>@item.Name</p>
-                        </div>
-                        <div class="tp-caption ps-banner__title" id="layer339" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-60','-40','-50','-70']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <p style="color: #00e68a;" class="text-uppercase">@item.Description</p>
-                        </div>
 
-                        <div class="tp-caption ps-banner__description" id="layer211" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['30','50','50','50']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                            <p>@item.Detail</p>
-                        </div><a class="tp-caption ps-btn" id="layer31" href="@item.Link" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['120','140','200','200']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">Xem ngay<i class="ps-icon-next"></i></a>
-                    </li>
-                }
-                   
-                </ul>
-        </div>
-    
+    <div class="rev_slider fullscreenbanner" id="home-banner">
+        <ul>
+            @foreach (var item in slides)
+            {
+                <li class="ps-banner" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0">
+                    <img class="rev-slidebg" style="image-rendering: pixelated" src="@item.Image" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
+                    <div class="tp-caption ps-banner__header" id="layer-1" data-x="left" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-150','-120','-150','-170']" data-width="['none','none','none','400']" data-type="text" data-responsive_offset="on" data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                        <p>@item.Name</p>
+                    </div>
+                    <div class="tp-caption ps-banner__title" id="layer339" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-60','-40','-50','-70']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                        <p style="color: #00e68a;" class="text-uppercase">@item.Description</p>
+                    </div>
+
+                    <div class="tp-caption ps-banner__description" id="layer211" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['30','50','50','50']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
+                        <p>@item.Detail</p>
+                    </div><a class="tp-caption ps-btn" id="layer31" href="@item.Link" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['120','140','200','200']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">Xem ngay<i class="ps-icon-next"></i></a>
+                </li>
+            }
+
+        </ul>
+    </div>
+
 
 </div>
 <div class="ps-section--features-product  ps-section pt-100 pb-100">
@@ -64,7 +64,7 @@
                                 <div class="ps-shoe mb-30">
                                     <div class="ps-shoe__thumbnail">
                                         <div class="ps-badge ps-badge--sale "><span>Hot</span></div>
-                                       
+
 
                                         <a class="ps-shoe__favorite" href="/them-gio-hang?productId=@item.ID&quantity=1">
                                             <i class="ps-icon-heart"></i>
@@ -72,7 +72,7 @@
                                         <a class="ps-shoe__overlay" href="@url"></a>
                                     </div>
                                     <div class="ps-shoe__content">
-                                     
+
                                         <div class="ps-shoe__detail">
                                             <a class="ps-shoe__name" href="@url">@item.Name</a>
                                             <p class="ps-shoe__categories"><a href="@url" alt="@item.Name">Xem sản phẩm</a></p>
@@ -81,10 +81,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     }
-                    </div>
+                </div>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
                             </div>
 
                             <div class="ps-shoe__content">
-                             
+
                                 <div class="ps-shoe__detail">
                                     <a class="ps-shoe__name" href="@url">@item.Name</a>
 
@@ -251,34 +251,30 @@
         </div>
     </div>
 </div>
+
 <div class="ps-section ps-home-blog pt-80 pb-80">
     <div class="ps-container">
         <div class="ps-section__header mb-50">
             <h2 class="ps-section__title" data-mask="Tin mới">Tin tức</h2>
             <div class="ps-section__action"><a class="ps-morelink text-uppercase" href="/tin-tuc">Xem tất cả bài đăng<i class="fa fa-long-arrow-right"></i></a></div>
         </div>
-
-        <div class="ps-blog-grid pt-80 pb-80">
-            <div class="ps-container">
-           
-                <div class="row">
-                    @foreach (var item in listContents)
-                    {
-                        var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                            <div class="ps-post mb-30">
-                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4" src="@item.Image" alt="@item.Name"></div>
-                                <div class="ps-post__content">
-                                    <a class="ps-post__title" href="@link">@item.Name</a>
-                                    <p class="ps-post__meta"><span>By:<a class="mr-5" href="#">@item.CreateBy</a></span>-<span class="ml-5">@item.CreateDate</span></p>
-                                    <p>@item.Description</p><a class="ps-morelink" href="@link">Đọc thêm<i class="fa fa-long-arrow-right"></i></a>
-
-                                </div>
+        <div class="ps-section__content">
+            <div class="row">
+                @foreach (var item in listContents)
+                {
+                    var link = "/tin-tuc/" + item.MetaTitle + "-" + item.ID;
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                        <div class="ps-post">
+                            <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="@link"></a><img class="sizeimg4" src="@item.Image" alt="@item.Name"></div>
+                            <div class="ps-post__content">
+                                <a class="ps-post__title" href="@link">@item.Name</a>
+                                <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">@item.CreateBy</a></span> -<span class="ml-5">@item.CreateDate</span></p>
+                                <p>@item.Description</p><a class="ps-morelink" href="@link">Xem chi tiết<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
-                    }
+                    </div>
+                }
                 </div>
-            </div>
         </div>
     </div>
 </div>

@@ -6531,7 +6531,7 @@ html .bg--parallax {
 .sizeimg {
     max-width: 100%;
     height: auto;
-    object-fit: scale-down;
+    object-fit: cover;
     image-rendering: pixelated;
 }
 
@@ -6540,42 +6540,41 @@ html .bg--parallax {
     height: auto;
     width: 10rem;
     image-rendering: pixelated;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 .imgnewcontent {
     width: 65px;
     height: auto;
-    
     image-rendering: pixelated;
-    object-fit: scale-down;
+    object-fit: cover;
     max-width: 100%;
-   
 }
 .sizeimg2 {
     width: 30rem;
     image-rendering: pixelated;
     height: 5rem;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 .sizeimg3 {
     max-width: 100%;
+    max-height: 28rem;
     height: auto;
     image-rendering: pixelated;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 
 .sizeimg4 {
     max-width: 100%;
-    max-height: 26rem;
+    max-height: 21rem;
     height: auto;
     image-rendering: pixelated;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 imgdetail {
     max-width: 100%;
-     height: auto;
+    height: auto;
     image-rendering: pixelated;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 .wrap-input100 {
     width: 90%;
