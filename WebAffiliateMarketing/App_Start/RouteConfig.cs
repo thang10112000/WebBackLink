@@ -20,7 +20,7 @@ namespace WebAffiliateMarketing
                defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                namespaces: new[] { "WebAffiliateMarketing.Controllers" }
            );
-          
+
             routes.MapRoute(
           name: "Product Detail",
           url: "chi-tiet/{metatitle}-{id}",
@@ -70,11 +70,18 @@ namespace WebAffiliateMarketing
       namespaces: new[] { "WebAffiliateMarketing.Controllers" }
   );
             routes.MapRoute(
+          name: "Information",
+          url: "thong-tin",
+          defaults: new { controller = "User", action = "Information", id = UrlParameter.Optional },
+          namespaces: new[] { "WebAffiliateMarketing.Controllers" }
+      );
+            routes.MapRoute(
    name: "Login",
    url: "dang-nhap",
    defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
    namespaces: new[] { "WebAffiliateMarketing.Controllers" }
 );
+
             routes.MapRoute(
        name: "Search",
        url: "tim-kiem",
@@ -87,12 +94,14 @@ namespace WebAffiliateMarketing
         defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
         namespaces: new[] { "WebAffiliateMarketing.Controllers" }
     );
+      
             routes.MapRoute(
        name: "Add Cart",
        url: "them-gio-hang",
        defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
        namespaces: new[] { "WebAffiliateMarketing.Controllers" }
    );
+        
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

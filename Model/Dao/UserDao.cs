@@ -38,16 +38,19 @@ namespace Model.Dao
             }
 
         }
+     
         public bool Update(User entity)
         {
             try
             {
                 var user = db.Users.Find(entity.ID);
                 user.Name = entity.Name;
-                if (!string.IsNullOrEmpty(entity.Password))
+                if (!string.IsNullOrEmpty(entity.Password) && !string.IsNullOrEmpty(entity.ConfirmNewPassword))
                 {
                     user.Password = entity.Password;
+                    user.ConfirmNewPassword = entity.ConfirmNewPassword;
                 }
+                
                 user.Address = entity.Address;
                 user.Email = entity.Email;
                 user.ModifiedBy = entity.ModifiedBy;
@@ -62,6 +65,8 @@ namespace Model.Dao
             }
 
         }
+
+      
 
         public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         {
@@ -101,6 +106,7 @@ namespace Model.Dao
             return data.Select(x => x.RoleID).ToList();
 
         }
+     
         public int Login(string userName, string passWord, bool isLoginAdmin = false)
         {
             var result = db.Users.SingleOrDefault(x => x.UserName == userName);
@@ -175,9 +181,15 @@ namespace Model.Dao
         {
             return db.Users.Count(x => x.UserName == userName) > 0;
         }
+
         public bool CheckEmail(string email)
         {
             return db.Users.Count(x => x.Email == email) > 0;
         }
+        public bool CheckPassword(string passWord)
+        {
+            return db.Users.Count(x => x.Password == passWord) < 0;
+        }
+
     }
 }

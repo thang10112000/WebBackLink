@@ -29,6 +29,7 @@
     <!-- CSS Library-->
     <link rel="stylesheet" href="/Assets/client/plugins/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Assets/client/plugins/owl-carousel/assets/owl.carousel.css">
+
     <link rel="stylesheet" href="/Assets/client/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
     <link rel="stylesheet" href="/Assets/client/plugins/slick/slick/slick.css">
     <link rel="stylesheet" href="/Assets/client/plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
@@ -39,6 +40,14 @@
     <link rel="stylesheet" href="/Assets/client/plugins/revolution/css/layers.css">
     <link rel="stylesheet" href="/Assets/client/plugins/revolution/css/navigation.css">
     <link href="/Assets/client/css/style.css" rel="stylesheet" />
+
+
+   
+
+
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
 
     <!-- Custom-->
     <link rel="stylesheet" href="/Assets/client/css/style.css">
@@ -55,7 +64,7 @@
 <body class="ps-loading">
     <div id="fb-root"></div>
     <div id="fb-root"></div>
-  
+
     <div class="header--sidebar"></div>
     <header class="header">
         <dxiv class="header__top">
@@ -91,7 +100,7 @@
 
         </div>
     </div>
-
+    @RenderSection("slide", required: false)
     <main class="ps-main">
 
         @RenderBody()
@@ -99,9 +108,9 @@
 
 
         <div class="footer">
-            <div>
-                @RenderSection("slide", required: false)
-            </div>
+
+
+
             @{ Html.RenderAction("Footer", "Home");}
         </div>
     </main>
@@ -126,7 +135,7 @@
     <script type="text/javascript" src="/Assets/client/plugins/elevatezoom/jquery.elevatezoom.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/jquery-ui/jquery-ui.min.js"></script>
-   
+
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script type="text/javascript" src="/Assets/client/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>

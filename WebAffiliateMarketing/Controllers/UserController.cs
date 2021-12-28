@@ -15,6 +15,10 @@ namespace WebAffiliateMarketing.Controllers
 {
     public class UserController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
         private Uri RedirectUri
         {
             get
@@ -109,6 +113,11 @@ namespace WebAffiliateMarketing.Controllers
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
+                    userSession.Password = user.Password;
+                    userSession.Name = user.Name;
+                    userSession.Phone = user.Phone;
+                    userSession.Email = user.Email;
+                    userSession.Address = user.Address;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     return Redirect("/");
                 }
@@ -157,7 +166,7 @@ namespace WebAffiliateMarketing.Controllers
                     user.Address = model.Address;
                     user.CreateDate = DateTime.Now;
                     user.Status = true;
-                  
+
 
                     var result = dao.Insert(user);
                     if (result > 0)
@@ -172,6 +181,46 @@ namespace WebAffiliateMarketing.Controllers
                 }
             }
             return View(model);
+        }
+        public ActionResult Information()
+        {
+            if (Session[CommonConstants.USER_SESSION] == null)
+            {
+                return View("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            return View(user);
+        }
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+                if (!string.IsNullOrEmpty(user.Password) )
+                {
+                    var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
+                    var encryptedMd5Pass = Encryptor.MD5Hash(user.ConfirmNewPassword);
+                    user.Password = encryptedMd5Pas;
+                    user.ConfirmNewPassword = encryptedMd5Pass;
+                }
+                var result = dao.Update(user);
+                if (result)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật user Không thành công");
+                }
+            }
+            return View(user);
         }
     }
 }

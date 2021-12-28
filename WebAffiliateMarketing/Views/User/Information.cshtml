@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var session = (WebAffiliateMarketing.UserLogin)Session[WebAffiliateMarketing.Common.CommonConstants.USER_SESSION];
+}
+
+
+<link href="~/Assets/client/css/information/Home.css" rel="stylesheet" />
+
+
+
+<div class=" u-section-1">
+    <div class="u-expanded-width u-shape u-shape-rectangle u-shape-1"></div>
+    <div alt="" class="u-align-center u-border-8 u-border-white u-image u-image-circle u-image-1">
+        <img src="~/Assets/client/css/information/man.png" />
+    </div>
+
+</div>
+<div class="u-section-1">
+    <h2 class="u-align-center u-text u-text-1">
+         <b>@session.Name</b>
+    </h2>
+
+</div>
+
+<br />
+    <section class="ftco-about ">
+        <div class="container1 ">
+            <ul class="about-info mt-4  " style="font-size:16px;">
+                <li class="d-flex"><span>Tên tài khoản</span><span>@session.UserName</span></li>
+                <li class="d-flex"><span>Mật khẩu:</span> <span>******</span></li>
+                <li class="d-flex"><span>Phone:</span> <span>@session.Phone</span></li>
+                <li class="d-flex"><span>Địa chỉ:</span> <span>@session.Address</span></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+

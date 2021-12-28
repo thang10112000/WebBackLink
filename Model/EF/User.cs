@@ -19,6 +19,12 @@
         [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
+        [Display(Name = "Nhập lại mật khẩu mới")]
+        [StringLength(32)]
+
+        [Compare(otherProperty: "Password", ErrorMessage = "Mật khẩu xác nhận sai.")]
+        public string ConfirmNewPassword { set; get; }
+
         [StringLength(20)]
         [Display(Name = "Nhóm tài khoản")]
         public string GroupID { get; set; }
