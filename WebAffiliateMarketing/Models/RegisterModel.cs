@@ -33,6 +33,7 @@ namespace WebAffiliateMarketing.Models
         [Display(Name = "Số điện thoại")]
 
         public string Phone { set; get; }
+     
 
 
     }

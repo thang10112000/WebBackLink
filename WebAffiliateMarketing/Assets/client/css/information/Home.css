@@ -1,178 +1,84 @@
-
-
-    .u-section-1 .u-shape-1 {
-        height: 300px;
-        background-color: #2AC37D;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .u-section-1 .u-image-1 {
-        width: 305px;
-        max-width: 50%;
-        height: auto;
-        background-size: cover;
-        background-position: 50% 50%;
-        margin: -180px auto 0;
-    }
-
-    .u-section-1 .u-text-1 {
-        font-size: 2rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        background-image: none;
-        width: 554px;
-        margin: 30px auto 0;
-    }
-
-@media (max-width: 767px) {
-    .u-section-1 .u-text-1 {
-        width: 540px;
+.createform {
+    width: 900px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 15px 15px 18px 5px rgba(0, 0, 0, 70%);
+    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+    .createform {
+        width: calc( 100% - 30px);
+        max-width: 100%;
     }
 }
 
-@media (max-width: 575px) {
-    .u-section-1 .u-text-1 {
-        width: 100%;
-        font-size: 1.5rem;
+@media screen and (min-width: 1024px) {
+    .createform {
+        max-width: 1200px;
     }
 }
-
-.u-image-circle.u-image {
-    border-radius: 50% !important;
+.signup-form {
+    width: auto;
 }
-
-.u-border-white {
-    border-color: #ffffff;
-    stroke: #ffffff;
-    border-style: solid;
+.signup-form{
+    width: 50%;
+    overflow: hidden;
 }
-
-.u-align-center {
-    text-align: center;
+.signup-form {
+    margin-left: 75px;
+    margin-right: 75px;
+    padding-left: 34px;
 }
-
-
-.d-flex {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    width:100%;
+.signup-form {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    /* box-sizing: border-box; */
+    padding: 0 30px;
 }
-
-.ftco-about .img-about {
-    width: 100%;
-    z-index: 0;
-    position: relative;
-}
-
-    .ftco-about .img-about .img {
-        display: block;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        -webkit-box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33);
-        -moz-box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33);
-        box-shadow: -20px 20px 69px -27px rgba(0, 0, 0, 0.33);
+@media screen and (max-width: 768px) {
+    .signup-content, .signin-content {
+        flex-direction: column;
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -o-flex-direction: column;
+        -ms-flex-direction: column;
+        justify-content: center;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        -o-justify-content: center;
+        -ms-justify-content: center;
     }
 
-.ftco-about ul.about-info {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-    .ftco-about ul.about-info li {
-        list-style: none;
-        margin-bottom: 10px;
+    .signup-form {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        /* box-sizing: border-box; */
+        padding: 0 30px;
     }
 
-        .ftco-about ul.about-info li span {
-            width: calc(100% - 130px);
-            font-weight: 600;
-            color: #b1b493;
-        }
+   
 
-            .ftco-about ul.about-info li span:first-child {
-                font-weight: 600;
-                color: #000000;
-                width: 130px;
-            }
-
-.ftco-about .my-interest {
-    margin-top: 30px;
-}
-
-    .ftco-about .my-interest .interest-wrap {
-        width: 25%;
-        border-left: 2px solid #b1b493;
-        padding-left: 10px;
+    .signup-form {
+        width: auto;
     }
 
-@media (max-width: 1199.98px) {
-    .ftco-about .my-interest .interest-wrap {
-        width: 50%;
-        float: left;
-        margin-bottom: 10px;
-    }
+   
+    
 }
-
-.ftco-about .my-interest .interest-wrap .icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #b1b493;
+display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
+    display: flex;
+    display: -webkit-flex;
 }
-
-    .ftco-about .my-interest .interest-wrap .icon span {
-        color: #000000;
-        font-size: 18px;
-    }
-
-.ftco-about .my-interest .interest-wrap .text {
-    font-weight: 600;
-    color: #000000;
-    padding-left: 5px;
-}
-
-.ftco-about ul.about-info {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-    .ftco-about ul.about-info li {
-        list-style: none;
-        margin-bottom: 10px;
-    }
-
-        .ftco-about ul.about-info li span {
-            width: calc(100% - 130px);
-            font-weight: 500;
-            color: #737373;
-        }
-
-            .ftco-about ul.about-info li span:first-child {
-                font-weight: 600;
-                color: #000000;
-                width: 130px;
-            }
-.mt-4 {
-    margin-top: 6rem !important;
-}
-.container1 {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-@media (min-width: 768px) 
-{
-    .container1 {
-        max-width: 380px;
-    }
+.signup-content {
+    padding: 75px 0;
 }

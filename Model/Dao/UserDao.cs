@@ -20,6 +20,7 @@ namespace Model.Dao
         public long Insert(User entity)
         {
             db.Users.Add(entity);
+            entity.CreateDate = DateTime.Now;
             db.SaveChanges();
             return entity.ID;
         }
@@ -50,10 +51,10 @@ namespace Model.Dao
                     user.Password = entity.Password;
                     user.ConfirmNewPassword = entity.ConfirmNewPassword;
                 }
-                
+                user.ModifiedBy = entity.ModifiedBy;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
-                user.ModifiedBy = entity.ModifiedBy;
+               
                 user.ModifiedDate = DateTime.Now;
                 db.SaveChanges();
                 return true;
@@ -188,7 +189,7 @@ namespace Model.Dao
         }
         public bool CheckPassword(string passWord)
         {
-            return db.Users.Count(x => x.Password == passWord) < 0;
+            return db.Users.Count(x => x.Password == passWord) > 0;
         }
 
     }

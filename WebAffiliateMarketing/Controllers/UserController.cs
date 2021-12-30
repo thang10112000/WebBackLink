@@ -153,25 +153,25 @@ namespace WebAffiliateMarketing.Controllers
                 }
                 else if (dao.CheckEmail(model.Email))
                 {
-                    ModelState.AddModelError("", "Email này đã được sử dụng");
+                    ModelState.AddModelError("", "Email đã tồn tại");
                 }
                 else
                 {
                     var user = new User();
                     user.UserName = model.UserName;
                     user.Password = Encryptor.MD5Hash(model.Password);
-                    user.Name = model.Name;
+                    user.ConfirmNewPassword = Encryptor.MD5Hash(model.ConfirmPassword);
+                  
                     user.Phone = model.Phone;
                     user.Email = model.Email;
+                    user.Name = model.Name;
                     user.Address = model.Address;
                     user.CreateDate = DateTime.Now;
                     user.Status = true;
-
-
                     var result = dao.Insert(user);
                     if (result > 0)
                     {
-                        ViewBag.Success = "Tài khoản của bạn đã được đăng ký";
+                        ViewBag.Success = "Đăng ký thành công";
                         model = new RegisterModel();
                     }
                     else
@@ -203,22 +203,35 @@ namespace WebAffiliateMarketing.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                if (!string.IsNullOrEmpty(user.Password) )
+
+                if (!string.IsNullOrEmpty(user.Password) && !string.IsNullOrEmpty(user.ConfirmNewPassword) && !string.IsNullOrEmpty(user.ModifiedBy))
                 {
                     var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
                     var encryptedMd5Pass = Encryptor.MD5Hash(user.ConfirmNewPassword);
+                    var encryptedMd5Passold = Encryptor.MD5Hash(user.ModifiedBy);
                     user.Password = encryptedMd5Pas;
                     user.ConfirmNewPassword = encryptedMd5Pass;
+                    user.ModifiedBy = encryptedMd5Passold;
                 }
-                var result = dao.Update(user);
-                if (result)
+
+                if (dao.CheckPassword(user.ModifiedBy))
                 {
-                    return RedirectToAction("Index", "User");
+                    var result = dao.Update(user);
+                    if (result)
+                    {
+                        return RedirectToAction("Logout", "User");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Cập nhật user Không thành công");
+                    }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật user Không thành công");
+                    ModelState.AddModelError("", "Mật Khẩu Cũ Không Đúng");
                 }
+
+
             }
             return View(user);
         }

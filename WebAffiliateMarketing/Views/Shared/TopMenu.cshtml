@@ -11,26 +11,34 @@
                 @{ var session = (UserLogin)Session[WebAffiliateMarketing.Common.CommonConstants.USER_SESSION]; }
                 @if (session == null)
                 {
-                    <div class="header__actions">
 
-                        @foreach (var item in Model)
-                        {
-                            <a href="@item.Link" target="@item.Target">@item.Text</a>
-                        }
+                <div class="header__actions">
+
+                    @foreach (var item in Model)
+                    {
+                        <a href="@item.Link" target="@item.Target">@item.Text</a>
+                    }
+                  
 
 
-
-                    </div>
+                </div>
                 }
                 else
                 {
             <div class="header__actions">
-                <a>Xin Chào:@session.UserName</a>
-                <a href="/Error/Index">Thông tin cá nhân</a>
-                <a href="/User/Edit/@session.UserID">Đổi mật khẩu</a>
-                <a>
-                    @Html.ActionLink("Đăng xuất", "Logout", "User")
-                </a>
+                <div class="btn-group ps-dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Xin Chào: @session.UserName<i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li> <a href="/thong-tin">Thông tin cá nhân</a></li>
+                        <li> <a href="/User/Edit/@session.UserID">Đổi mật khẩu</a></li>
+                        <li>
+                      
+                                @Html.ActionLink("Đăng xuất", "Logout", "User")
+                           
+                        </li>
+                    </ul>
+                </div>
+               
             </div>
                 }
               
