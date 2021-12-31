@@ -4,59 +4,190 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="test">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-            </div>
-        </div>
-
+<div class="ps-mission bg-cover" data-background="/Assets/client/css/information/team.png">
+    
+    <div class="ps-container">
+        <h3>Nhiệm vụ của chúng tôi</h3>
+        <h2>Sự hài lòng của các bạn là thành công của chúng tôi. <br /> Đánh giá của các bạn thúc đẩy chúng tôi trở nên tốt hơn.</h2>
     </div>
 </div>
-<div class="ps-product--detail pt-60">
+<div class="ps-section ps-ourteam pt-80 pb-80">
     <div class="ps-container">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-10 col-md-12 col-lg-offset-1">
-                    <div class="ps-product__thumbnail">
-                        <div class="ps-product__preview">
-
+        <div class="ps-section__header mb-50">
+            <h2 class="ps-section__title" data-mask="TEAM">- Người sáng lập</h2>
+        </div>
+        <div class="ps-section__content">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="ps-user">
+                        <div class="ps-user__thumbnnail">
+                            <img class="sizeanh" src="~/Assets/client/css/information/info.jpg" />
+                            <ul class="ps-user__social">
+                                <li><a href="https://www.instagram.com/thangne1011/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/thang10112000"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/Error/Index"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="ps-product__image">
-                            <div class="item"><img src="/Assets/client/images/partner.jpg" alt="@item.Name"></div>
-
-                        </div>
-                    </div>
-                    <div class="ps-product__thumbnail--mobile">
-                        <div class="ps-product__main-img"><img src="/Assets/client/images/partner.jpg" alt="@item.Name"></div>
-                      
-                    </div>
-                    <div class="ps-product__info">
-
-                        <h1>@item.Name</h1>
-
-
-                        <div class="ps-product__block ps-product__quickview">
-                            <h4>REVIEW</h4>
-                            <h4>@item.Description</h4>
-                        </div>
-
-                    </div>
-                    <div class="clearfix"></div>
-
-                    <div class="tab-content mb-60">
-                        <div class="tab-pane active" role="tabpanel" id="tab_01">
-                            <h4>
-                                @Html.Raw(item.Detail)
-                            </h4>
+                        <div class="ps-user__content">
+                            <h3>Lý Thượng Thắng</h3>
+                            <p> Người sáng lập</p>
                         </div>
                     </div>
                 </div>
-
-            }
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="ps-user">
+                        <div class="ps-user__thumbnnail">
+                            <img class="sizeanh" src="/Assets/client/css/information/info2.jpg" />
+                            <ul class="ps-user__social">
+                                <li><a href="https://www.instagram.com/thangne1011/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/thang10112000"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/Error/Index"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="ps-user__content">
+                            <h3>Lý Thượng Thắng</h3>
+                            <p>Giám đốc </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="ps-user">
+                        <div class="ps-user__thumbnnail">
+                            <img class="sizeanh" src="/Assets/client/css/information/info3.jpg" />
+                            <ul class="ps-user__social">
+                                <li><a href="https://www.instagram.com/thangne1011/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/thang10112000"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/Error/Index"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="ps-user__content">
+                            <h3>Lý Thượng Thắng</h3>
+                            <p>Người thiết kế</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="ps-user">
+                        <div class="ps-user__thumbnnail">
+                            <img class="sizeanh" src="/Assets/client/css/information/info3.jpg" />
+                            <ul class="ps-user__social">
+                                <li><a href="https://www.instagram.com/thangne1011/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/thang10112000"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/Error/Index"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="ps-user__content">
+                            <h3>Lý Thượng Thắng</h3>
+                            <p>Người lập trình</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="ps-all-user pt-25 pb-50">
+    <div class="ps-container">
+        <div class="row ps-col-tiny">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 ">
+                <div class="ps-team">
+                    <h3>Nhân viên.</h3>
+                    <ul class="ps-team__listing">
+                        <li><a href="https://www.facebook.com/thang10112000">Lý Thượng Thắng</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 ">
+                <div class="ps-team">
+                    <h3>Người hỗ trợ.</h3>
+                    <ul class="ps-team__listing">
+                        <li><a href="https://www.facebook.com/NguyenPhuc.2015">Nguyễn Minh Phúc</a></li>
+                        <li><a href="https://www.facebook.com/caominhquan0512">Cao Minh Quân</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 ">
+                <div class="ps-team">
+                    <h3>Nhân viên.</h3>
+                    <ul class="ps-team__listing">
+                        <li><a href="https://www.facebook.com/thang10112000">Lý Thượng Thắng</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 ">
+                <div class="ps-team">
+                    <h3>Nhân viên.</h3>
+                    <ul class="ps-team__listing">
+                        <li><a href="https://www.facebook.com/thang10112000">Lý Thượng Thắng</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                <div class="ps-join-team">
+                    <h3>Bạn có muốn tham gia nhóm &Aacute; xây dựng ước mơ của mình ngay bây giờ ?</h3><a class="ps-btn" href="/Error/Index">Gia nhập ngay<i class="ps-icon-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="test">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ps-product--detail pt-60">
+        <div class="ps-container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-10 col-md-12 col-lg-offset-1">
+                        <div class="ps-product__thumbnail">
+                            <div class="ps-product__preview">
+
+                            </div>
+                            <div class="ps-product__image">
+                                <div class="item"><img src="/Assets/client/images/partner.jpg" alt="@item.Name"></div>
+
+                            </div>
+                        </div>
+                        <div class="ps-product__thumbnail--mobile">
+                            <div class="ps-product__main-img"><img src="/Assets/client/images/partner.jpg" alt="@item.Name"></div>
+
+                        </div>
+                        <div class="ps-product__info">
+
+                            <h1>@item.Name</h1>
+
+
+                            <div class="ps-product__block ps-product__quickview">
+                                <h4>REVIEW</h4>
+                                <h4>@item.Description</h4>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="tab-content mb-60">
+                            <div class="tab-pane active" role="tabpanel" id="tab_01">
+                                <h4>
+                                    @Html.Raw(item.Detail)
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>*@
 

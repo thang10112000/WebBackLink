@@ -13,11 +13,12 @@ namespace WebAffiliateMarketing.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
 
             ViewBag.Slides = new SlideDao().ListAll();
             var productDao = new ProductDao();
+           
             ViewBag.NewProducts = productDao.ListNewProduct(4);// hiển thị sản phẩm mới tối đa 4
             ViewBag.NewContents = new ContentDao().ListNewContent(3); // hiển thị tin tức mới tối đa 3
             ViewBag.ListFeatureProducts = productDao.ListFeatureProduct(4); // hiển thị sản phẩm có lượt viewcout nhiều tối đa 4

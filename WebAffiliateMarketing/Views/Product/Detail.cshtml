@@ -104,22 +104,24 @@
                 <div class="clearfix"></div>
                 <div class="ps-product__content mt-50">
                     <ul class="tab-list" role="tablist">
-                        <li><a role="tab" data-toggle="tab">Chi tiết sản phẩm</a></li>
+                        <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab">Chi tiết sản phẩm</a></li>
+                        <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">Bình luận</a></li>
+
                     </ul>
                 </div>
                 <div class="tab-content mb-60">
-                    <div class="tab-pane active">
-                        <p>
-                            @Html.Raw(Model.Detail)
-                        </p>
+                    <div class="tab-pane active" role="tabpanel" id="tab_01">
+                        @Html.Raw(Model.Detail)
                     </div>
+                    <div class="tab-pane" role="tabpanel" id="tab_02">
+
+                        <div class="fb-comments" data-href="https://localhost:44396/" data-width="" data-numposts="5"></div>
+                    </div>
+                  
+               
                 </div>
-                <div class="ps-product__content mt-50">
-                    <ul class="tab-list" role="tablist">
-                        <li><a role="tab" data-toggle="tab">Bình luận</a></li>
-                    </ul>
-                </div>
-                <div class="fb-comments" data-href="https://localhost:44396/" data-width="" data-numposts="5"></div>
+             
+             
             </div>
         </div>
     </div>

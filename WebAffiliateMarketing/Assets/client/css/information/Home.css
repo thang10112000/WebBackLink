@@ -82,3 +82,17 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
 .signup-content {
     padding: 75px 0;
 }
+.sizeanh {
+    max-width: 100%;
+    max-height: 45rem;
+    height: auto;
+    image-rendering: pixelated;
+    object-fit: cover;
+}
+.sizeanh2 {
+    max-width: 100%;
+    max-height: 35rem;
+    height: auto;
+    image-rendering: pixelated;
+    object-fit: cover;
+}

@@ -1717,8 +1717,15 @@
     <Content Include="Assets\client\css\bootstrap\mixins\_visibility.css" />
     <Content Include="Assets\client\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Assets\client\css\bootstrap\_media.css" />
+    <Content Include="Assets\client\css\information\404.jpg" />
+    <Content Include="Assets\client\css\information\ceo.jpg" />
     <Content Include="Assets\client\css\information\Home.css" />
+    <Content Include="Assets\client\css\information\info.jpg" />
+    <Content Include="Assets\client\css\information\info2.jpg" />
+    <Content Include="Assets\client\css\information\info3.jpg" />
     <Content Include="Assets\client\css\information\man.png" />
+    <Content Include="Assets\client\css\information\team.png" />
+    <Content Include="Assets\client\css\information\teamwork.jpg" />
     <Content Include="Assets\client\css\main.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\css\style_table.css" />
@@ -3174,6 +3181,7 @@
     <Content Include="Areas\Admin\Views\UserGroup\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserGroup\Create.cshtml" />
     <Content Include="Areas\Admin\Views\UserGroup\Edit.cshtml" />
+    <Content Include="Assets\client\css\information\teamwork2.png" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
