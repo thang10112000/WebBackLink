@@ -4,10 +4,14 @@
     <ul class="main-menu menu">
         @foreach (var item in Model)
         {
-            <li class="menu-item menu-item-has-children dropdown">
-                <a href="@item.Link" target="@item.Target">@item.Text</a>
+        <li class="menu-item menu-item-has-children dropdown">
 
-            </li>
+            <a href="@item.Link" target="@item.Target">@item.Text</a>
+            <ul class="sub-menu">
+                <li class="menu-item"><a href="@item.Link" target="@item.Target">@item.Text</a></li>
+             
+            </ul>
+        </li>
         
             }
 
