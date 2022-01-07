@@ -41,19 +41,22 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-               
-                    var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
-                    user.Password = encryptedMd5Pas;
-                
+
+                var encryptedMd5Pas = Encryptor.MD5Hash(user.Password);
+                user.Password = encryptedMd5Pas;
+                var encryptedMd5Pass = Encryptor.MD5Hash(user.ConfirmNewPassword);
+
+                user.ConfirmNewPassword = encryptedMd5Pass;
+
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
-                    SetAlert("Đã thêm tài khoản", "success");
+                    SetAlert("Thêm user thành công", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm tài khoản không thành công .");
+                    ModelState.AddModelError("", "Thêm user không thành công");
                 }
             }
             return View("Index");
