@@ -6573,6 +6573,7 @@ html .bg--parallax {
 imgdetail {
     max-width: 100%;
     height: auto;
+
     image-rendering: pixelated;
     object-fit: cover;
 }

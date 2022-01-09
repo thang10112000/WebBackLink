@@ -6,6 +6,7 @@
     ViewBag.Keywords = Model.MetaKeywords;
     ViewBag.Descriptions = Model.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var comment = Model.MetaTitle + "-" + Model.ID;
 }
 
 
@@ -14,7 +15,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
                 <div class="ps-post--detail">
-                    <div class="ps-post__thumbnail"><img src="@Model.Image" class="imgdetail" alt="@Model.Name"></div>
+                    <div class="ps-post__thumbnail imgdetail"><img src="@Model.Image" class="imgdetail" alt="@Model.Name"></div>
                     <div class="ps-post__header">
                         <h3 class="ps-post__title">@Model.Name</h3>
                         <p class="ps-post__meta">By <a href="#">@Model.CreateBy</a> on @Model.CreateDate  </p>
@@ -37,9 +38,16 @@
 
                     </div>
                 </div>
-               
-              
-             
+
+                <div class="ps-comments">
+                    <h3>Bình luận</h3>
+                    <div class="ps-comment">
+                        <div class="fb-comments" data-href="https://localhost:44396/@comment" data-width="1000" data-numposts="5"></div>
+                        <div class="fb-comments" data-href="http://thang10112000-001-site1.ctempurl.com/@comment" data-width="1000" data-numposts="5"></div>
+                    </div>
+                 
+                </div>
+
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                 <aside class="ps-widget--sidebar">
