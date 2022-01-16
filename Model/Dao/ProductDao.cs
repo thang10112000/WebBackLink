@@ -112,11 +112,7 @@ namespace Model.Dao
             db.SaveChanges();
             return model;
         }
-        //public Product ViewDetail(int id)
-        //{
-        //    return db.Products.Find(id);
-        //}
-
+       
         public long Insert(Product entity)
         {
             string image = "<image></image>";

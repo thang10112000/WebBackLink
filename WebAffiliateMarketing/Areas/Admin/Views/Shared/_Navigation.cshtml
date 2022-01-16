@@ -1,95 +1,124 @@
 ﻿
-<nav class="navigation">
-    <div class="container-fluid">
-        <div class="navigation__column left">
-            <div class="header__logo"><a class="ps-logo" href="/Admin/Home/Index"><img src="~/Assets/admin/images/clickshoplogo1.png" alt=""></a></div>
-        </div>
-        <div class="navigation__column center">
-            <ul class="main-menu menu">
-                <li class="menu-item menu-item-has-children dropdown">
-                    <a href="/Admin/Home/Index">Trang chủ</a>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/Admin/Home">CLICKSHOP</a>
+    </div>
+    <!-- /.navbar-header -->
+    <ul class="nav navbar-top-links navbar-right">
 
-                </li>
-                <li class="menu-item menu-item-has-children has-mega-menu">
-                    <a href="#">Tài khoản</a>
-                    <div class="mega-menu">
-                        <div class="mega-wrap">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <div class="" >
+                @{ var session = (UserLogin)Session[WebAffiliateMarketing.Common.CommonConstants.USER_SESSION]; }
+                @if (session == null)
+                {
 
-                            <div class="mega-column">
+                <div class="header__actions">
+                    @Html.ActionLink("Đăng nhập", "Logout", "Login")
 
-                                <ul class="mega-item mega-features">
 
-                                    <li><a href="/Admin/UserGroup/Index">Nhóm người dùng</a></li>
-                                    <li><a href="/Admin/User/Index">Danh sách người dùng</a></li>
-                                </ul>
-                            </div>
+                </div>
+                }
+                else
+                {
+                    <div class="header__actions">
+                        <div class="btn-group ps-dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Xin Chào: @session.UserName<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              
+                                <li>
 
+                                    @Html.ActionLink("Đăng xuất", "Logout", "Login")
+
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
+                }
+
+            </div>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+
+                <li>
+                    <a href="/Admin/Home/Index"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
                 </li>
-                <li class="menu-item menu-item-has-children has-mega-menu">
-                    <a href="#">Tin tức</a>
-                    <div class="mega-menu">
-                        <div class="mega-wrap">
-
-                            <div class="mega-column">
-
-                                <ul class="mega-item mega-features">
-
-                                    <li><a href="/Admin/Category/Index">Danh mục tin tức</a></li>
-                                    <li><a href="/Admin/Content/Index">Tin tức</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
+                <li>
+                    <a href="#"><i class="fa fa-user fa-fw"></i> Hệ thống<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/Admin/UserGroup/Index">Nhóm người dùng</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/User/Index">User</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
                 </li>
-
-                @*<li class="menu-item"><a href="#">Công nghệ</a></li>*@
-
-                <li class="menu-item menu-item-has-children has-mega-menu">
-                    <a href="#">Sản phẩm</a>
-                    <div class="mega-menu">
-                        <div class="mega-wrap">
-
-                            <div class="mega-column">
-
-                                <ul class="mega-item mega-features">
-
-                                    <li><a href="/Admin/ProductCategory/Index">Danh mục</a></li>
-                                    <li><a href="/Admin/Product/Index">Sản phẩm</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
+                <li>
+                    <a href="#"><i class="fa fa-comment fa-fw"></i> Tin tức<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/Admin/Category/Index">Danh mục tin tức</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Content/Index">Tin tức</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
                 </li>
-
-                <li class="menu-item menu-item-has-children has-mega-menu">
-                    <a href="#">Quản lý chung</a>
-                    <div class="mega-menu">
-                        <div class="mega-wrap">
-
-                            <div class="mega-column">
-
-                                <ul class="mega-item mega-features">
-                                    <li><a href="/Admin/About/Index">Giới thiệu</a></li>
-                                    <li><a href="/Admin/Footer/Index">Footer</a></li>
-                                    <li><a href="/Admin/Menu/Index">Menu</a></li>
-                                    <li><a href="/Admin/Slide/Index">Slide</a></li>
-                                    <li><a href="/Admin/Feedback/Index">Phản hồi</a></li>
-                                    <li><a href="/Admin/Tag/Index">Tag</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
+                <li>
+                    <a href="#"><i class="fa fa-bell fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/Admin/ProductCategory/Index">Danh mục sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Product/Index">Sản phẩm</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý chung<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/Admin/About/Index">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Footer/Index">Foooter</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Menu/Index">Menu</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Slide/Index">Slide</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Feedback/Index">Phản hồi</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Tag/Index">Tags</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
                 </li>
             </ul>
         </div>
-        <div class="navigation__column right">
-
-            <div class="menu-toggle"><span></span></div>
-        </div>
+        <!-- /.sidebar-collapse -->
     </div>
+    <!-- /.navbar-static-side -->
 </nav>

@@ -23,7 +23,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
             ViewBag.SearchString = searchString;
             return View(model);
         }
-        
+
         [HttpGet] // phần tải trang giao diện
         [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
@@ -56,7 +56,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
         [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id)
         {
-        
+
             var product = new ProductDao().ViewDetail(id);
             SetViewBag(product.CategoryID);
             return View(product);
@@ -117,7 +117,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
 
             foreach (var item in listImages)
             {
-                var subStringItem = item.Substring(22);
+                var subStringItem = item.Substring(22+1);
                 xElement.Add(new XElement("Image", subStringItem));
             }
             ProductDao dao = new ProductDao();
@@ -129,7 +129,7 @@ namespace WebAffiliateMarketing.Areas.Admin.Controllers
                     status = true
                 });
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return Json(new
                 {
